@@ -1,0 +1,142 @@
+{
+  "id": "partners-csv",
+  "bank": "Partners Banka",
+  "label": "Partners Banka — výpis pohybů (CSV)",
+  "version": 1,
+  "format": "delimited",
+  "catalogue": {
+    "country": "CZ",
+    "keywords": [
+      "partners",
+      "partners banka",
+      "partners bank"
+    ],
+    "howTo": "Výpis pohybů z Partners Banky, formát CSV. Název souboru nepřejmenovávej — je v něm číslo účtu.",
+    "sampleFileName": "vypis_1234567890_CZK_20260801_20260831.csv"
+  },
+  "detect": {
+    "fileNamePattern": "(?i)^vypis_\\d+_[A-Z]{3}_\\d{8}_\\d{8}\\.csv$",
+    "contentContains": [
+      "identifikace transakce",
+      "původní název protistrany",
+      "poznámka pro mě"
+    ]
+  },
+  "delimited": {
+    "encoding": "auto",
+    "delimiter": ";",
+    "quote": "\"",
+    "headerMustContain": [
+      "datum zúčtování",
+      "identifikace transakce",
+      "částka"
+    ]
+  },
+  "documentFields": {
+    "ownAccount": {
+      "pattern": "(?i)vypis_(\\d+)_",
+      "group": 1,
+      "source": "fileName"
+    }
+  },
+  "row": {
+    "accountNumber": {
+      "from": "ownAccount"
+    },
+    "date": {
+      "from": "Datum zúčtování",
+      "date": "d.M.yyyy"
+    },
+    "bookingDate": {
+      "from": "Datum provedení",
+      "date": "d.M.yyyy"
+    },
+    "amount": {
+      "from": "Částka",
+      "number": {
+        "decimal": ",",
+        "grouping": " "
+      }
+    },
+    "currency": {
+      "from": "Měna",
+      "default": "CZK"
+    },
+    "direction": {
+      "field": {
+        "from": "Směr"
+      },
+      "debitValues": [
+        "Odchozí"
+      ],
+      "creditValues": [
+        "Příchozí"
+      ]
+    },
+    "counterpartyName": {
+      "from": "Název protistrany",
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ],
+      "fallback": {
+        "from": "Původní název protistrany"
+      }
+    },
+    "counterpartyAccount": {
+      "from": "IBAN protistrany",
+      "fallback": {
+        "template": "{Číslo účtu protistrany}/{Kód banky protistrany}",
+        "transforms": [
+          {
+            "op": "replace",
+            "pattern": "^/\\d*$",
+            "with": ""
+          }
+        ]
+      }
+    },
+    "variableSymbol": {
+      "from": "Variabilní symbol"
+    },
+    "constantSymbol": {
+      "from": "Konstantní symbol"
+    },
+    "specificSymbol": {
+      "from": "Specifický symbol"
+    },
+    "message": {
+      "from": "Zpráva pro příjemce",
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ]
+    },
+    "note": {
+      "choose": {
+        "on": "Směnný kurz",
+        "cases": {
+          "1": {
+            "from": "Poznámka pro mě"
+          }
+        },
+        "otherwise": {
+          "template": "{Poznámka pro mě} {Původní částka} {Původní měna} kurzem {Směnný kurz}"
+        }
+      },
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ]
+    },
+    "operation": {
+      "from": "Typ"
+    },
+    "externalId": {
+      "from": "Identifikace transakce"
+    }
+  }
+}

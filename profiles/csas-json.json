@@ -1,0 +1,174 @@
+{
+  "id": "csas-json",
+  "bank": "Česká spořitelna",
+  "label": "Česká spořitelna — export pohybů (JSON)",
+  "version": 1,
+  "format": "json",
+  "catalogue": {
+    "country": "CZ",
+    "keywords": [
+      "česká spořitelna",
+      "spořitelna",
+      "csas",
+      "erste",
+      "george"
+    ],
+    "howTo": "Export pohybů z internetového bankovnictví George, formát JSON. Oproti CSV nese navíc IBAN protistrany a kategorii od banky."
+  },
+  "detect": {
+    "fileNamePattern": "(?i)_\\d{4}-\\d{2}-\\d{2}_\\d{4}-\\d{2}-\\d{2}\\.json$",
+    "contentContains": [
+      "ownerAccountTitle",
+      "partnerAccount",
+      "bookingTypeTranslation"
+    ]
+  },
+  "json": {
+    "encoding": "auto",
+    "rowsAt": "",
+    "fields": {
+      "booking": "booking",
+      "valuation": "valuation",
+      "partnerName": "partnerName",
+      "merchantName": "merchantName",
+      "receiverName": "receiverName",
+      "senderName": "senderName",
+      "partnerIban": "partnerAccount.iban",
+      "partnerNumber": "partnerAccount.number",
+      "partnerBankCode": "partnerAccount.bankCode",
+      "amountValue": "amount.value",
+      "amountPrecision": "amount.precision",
+      "currency": "amount.currency",
+      "balanceValue": "balance.value",
+      "variableSymbol": "variableSymbol",
+      "constantSymbol": "constantSymbol",
+      "specificSymbol": "specificSymbol",
+      "receiverReference": "receiverReference",
+      "senderReference": "senderReference",
+      "reference": "reference",
+      "note": "note",
+      "category": "categories",
+      "cardLocation": "cardLocation",
+      "bookingType": "bookingTypeTranslation",
+      "ownerAccountNumber": "ownerAccountNumber",
+      "transactionId": "transactionId"
+    }
+  },
+  "row": {
+    "accountNumber": {
+      "from": "ownerAccountNumber"
+    },
+    "date": {
+      "from": "booking",
+      "date": "yyyy-MM-dd",
+      "transforms": [
+        {
+          "op": "take",
+          "length": 10
+        }
+      ]
+    },
+    "bookingDate": {
+      "from": "valuation",
+      "date": "yyyy-MM-dd",
+      "transforms": [
+        {
+          "op": "take",
+          "length": 10
+        }
+      ]
+    },
+    "amount": {
+      "from": "amountValue",
+      "number": {
+        "alreadyMinorUnits": true,
+        "scaleField": "amountPrecision"
+      }
+    },
+    "currency": {
+      "from": "currency",
+      "default": "CZK"
+    },
+    "balance": {
+      "from": "balanceValue",
+      "number": {
+        "alreadyMinorUnits": true,
+        "scaleField": "amountPrecision"
+      }
+    },
+    "counterpartyName": {
+      "from": "partnerName",
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ],
+      "fallback": {
+        "from": "merchantName",
+        "fallback": {
+          "from": "receiverName",
+          "fallback": {
+            "from": "senderName"
+          }
+        }
+      }
+    },
+    "counterpartyAccount": {
+      "from": "partnerIban",
+      "fallback": {
+        "template": "{partnerNumber}/{partnerBankCode}",
+        "transforms": [
+          {
+            "op": "replace",
+            "pattern": "^/\\d*$",
+            "with": ""
+          }
+        ]
+      }
+    },
+    "variableSymbol": {
+      "from": "variableSymbol"
+    },
+    "constantSymbol": {
+      "from": "constantSymbol"
+    },
+    "specificSymbol": {
+      "from": "specificSymbol"
+    },
+    "message": {
+      "from": "receiverReference",
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ],
+      "fallback": {
+        "from": "senderReference",
+        "fallback": {
+          "from": "reference"
+        }
+      }
+    },
+    "note": {
+      "template": "{note} {cardLocation}",
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ]
+    },
+    "operation": {
+      "from": "bookingType"
+    },
+    "bankCategory": {
+      "from": "category"
+    },
+    "externalId": {
+      "from": "transactionId"
+    }
+  },
+  "bankCategoryMapping": {
+    "Cestovní výdaje": "Dovolená",
+    "Náhrady": "Vratky a refundace"
+  }
+}

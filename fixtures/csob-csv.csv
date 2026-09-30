@@ -1,0 +1,17 @@
+Pohyby na účtu 111222/0300 dne 19.09.2026 22:53:55.
+
+číslo účtu;datum zaúčtování;částka;měna;zůstatek;číslo protiúčtu;kód banky protiúčtu;jméno protistrany;adresa protistrany;konstantní symbol;variabilní symbol;specifický symbol;označení operace;název trvalého příkazu;vlastní poznámka;zpráva;kategorie;původní transakce;kurz;E2E identifikace;reference plátce;původní plátce;konečný příjemce;ID transakce
+111222/0300;18.09.2026;-27306,57;CZK;7038,03;5160018296;5500;Splátka karty;;;1542187826;;Odchozí úhrada okamžitá;;;SPLÁTKA KREDITNÍ KARTY;Splátky;;;;;;;fixture-0001
+111222/0300;17.09.2026;9611,00;CZK;34344,60;308341581;0100;NOVÁK PETR;;;;;Příchozí úhrada okamžitá;;;Azory, dík;Příjem;;;;;;;fixture-0002
+111222/0300;17.09.2026;-9200,00;CZK;24733,60;221133245;0300;GYMNÁZIUM PRAHA;;0;83401203;;Odchozí úhrada;;;Platba faktury FVN-4158/2026;Odchozí nezatříděná;;;;;;;fixture-0003
+111222/0300;15.09.2026;-95000,00;CZK;23933,60;249429013;0600;VZOR JAN;;;;;Odchozí úhrada okamžitá;;;;Odchozí nezatříděná;;;;;;;fixture-0004
+111222/0300;15.09.2026;95000,00;CZK;118933,60;4028783033;0800;Vzor Jan;;0;7705150497;;Příchozí úhrada;;;Monthly Empl.;Příjem;;;;;;;fixture-0005
+111222/0300;14.09.2026;-526,00;CZK;13933,60;217077033;0300;OPERATOR CR A.S.;;0308;1040136207;;Inkaso;;;0 0 040528705532000;TV, internet, telefon;;;;;;;fixture-0006
+111222/0300;10.09.2026;-827,00;CZK;13544,60;35-7254820297;0100;SPOLEČENSTVÍ VLASTNÍ;;0308;2026108101;;Trvalý příkaz elektronicky 2;Garáž měsíční platba;;SEMICKA 12,GARAZ;Provoz domácnosti;;;;;;;fixture-0007
+111222/0300;10.09.2026;-4254,00;CZK;14371,60;35-7254820297;0100;SPOLEČENSTVÍ VLASTNÍ;;0308;202632701;;Trvalý příkaz elektronicky 1;Byt měsíční platba;;SEMICKA 12,BYT;Provoz domácnosti;;;;;;;fixture-0008
+111222/0300;08.09.2026;-80,00;CZK;3925,60;20171720;5500;Dítě První;;;;;Trvalý příkaz elektronicky 812;Kapesné;;Kapesne;Nákupy a služby;;;;;;;fixture-0009
+111222/0300;08.09.2026;-115,00;CZK;4005,60;2309140;5500;Dítě Druhé;;;;;Trvalý příkaz elektronicky 656;Kapesné;;Kapesne;Nákupy a služby;;;;;;;fixture-0010
+111222/0300;07.09.2026;-10000,00;CZK;4120,60;;;;;1178;401000249;2500226220;Transakce platební kartou;;;Částka: 10000 CZK 05.09.2026, Místo: AC01 Modranska 1796;Výběr z bankomatu;10 000,00 CZK;;;;;;fixture-0011
+111222/0300;06.09.2026;-360,00;CZK;3760,60;5150603379;0800;;;;;;Odchozí úhrada okamžitá;;;Vajíčka;Odchozí nezatříděná;;;;;;;fixture-0012
+111222/0300;06.09.2026;-360,00;CZK;3400,60;5150603379;0800;;;;;;Odchozí úhrada okamžitá;;;Vajíčka;Odchozí nezatříděná;;;;;;;fixture-0013
+111222/0300;05.09.2026;-3976,00;CZK;7376,60;2226222;0800;;;3558;3951145654;;Odchozí úhrada okamžitá;;;QR PLATBA;Pojištění;;;;;;;fixture-0014

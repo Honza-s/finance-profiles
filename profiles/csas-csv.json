@@ -1,0 +1,99 @@
+{
+  "id": "csas-csv",
+  "bank": "Česká spořitelna",
+  "label": "Česká spořitelna — export pohybů (CSV)",
+  "version": 1,
+  "format": "delimited",
+  "catalogue": {
+    "country": "CZ",
+    "keywords": [
+      "česká spořitelna",
+      "spořitelna",
+      "csas",
+      "erste",
+      "george"
+    ],
+    "howTo": "Export pohybů z internetového bankovnictví George, formát CSV."
+  },
+  "detect": {
+    "fileNamePattern": "(?i)_\\d{4}-\\d{2}-\\d{2}_\\d{4}-\\d{2}-\\d{2}\\.csv$",
+    "contentContains": [
+      "datum zaúčtování",
+      "název protiúčtu",
+      "místo použití karty"
+    ]
+  },
+  "delimited": {
+    "encoding": "utf-16",
+    "delimiter": ",",
+    "quote": "\"",
+    "headerMustContain": [
+      "datum zaúčtování",
+      "částka",
+      "místo použití karty"
+    ]
+  },
+  "row": {
+    "accountNumber": {
+      "from": "Číslo účtu vlastníka"
+    },
+    "date": {
+      "from": "Datum zaúčtování",
+      "date": "dd.MM.yyyy"
+    },
+    "amount": {
+      "from": "Částka",
+      "number": {
+        "decimal": ",",
+        "grouping": " "
+      }
+    },
+    "currency": {
+      "from": "Měna",
+      "default": "CZK"
+    },
+    "counterpartyName": {
+      "from": "Název protiúčtu",
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ],
+      "fallback": {
+        "from": "Název zařízení"
+      }
+    },
+    "counterpartyAccount": {
+      "from": "Protiúčet",
+      "fallback": {
+        "from": "IBAN"
+      }
+    },
+    "message": {
+      "from": "Zpráva pro příjemce",
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ],
+      "fallback": {
+        "from": "Zpráva pro mě"
+      }
+    },
+    "note": {
+      "template": "{Poznámka} {Místo použití karty}",
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ]
+    },
+    "bankCategory": {
+      "from": "Kategorie"
+    }
+  },
+  "bankCategoryMapping": {
+    "Cestovní výdaje": "Dovolená",
+    "Náhrady": "Vratky a refundace"
+  }
+}

@@ -1,0 +1,83 @@
+{
+    "profile": "dkb-csv",
+    "rows": [
+        {
+            "date": "2026-09-25",
+            "amount": -2700,
+            "currency": "EUR",
+            "counterparty": "Ristorante Napoli",
+            "counterpartyAccount": "IT60X0542811101000000123456",
+            "variableSymbol": null,
+            "message": "tax 3 days 2 adults",
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": "DE02120300000000202051",
+            "externalId": null
+        },
+        {
+            "date": "2026-09-09",
+            "amount": -102900,
+            "currency": "EUR",
+            "counterparty": "Vzor Jan",
+            "counterpartyAccount": "DE02120300000000202051",
+            "variableSymbol": null,
+            "message": null,
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": "DE02120300000000202051",
+            "externalId": null
+        },
+        {
+            "date": "2026-09-09",
+            "amount": 102900,
+            "currency": "EUR",
+            "counterparty": "Arbeitgeber GmbH",
+            "counterpartyAccount": "LT121000011101001000",
+            "variableSymbol": null,
+            "message": "Gehalt",
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": "DE02120300000000202051",
+            "externalId": null
+        },
+        {
+            "date": "2026-08-26",
+            "amount": 34,
+            "currency": "EUR",
+            "counterparty": "Portal GmbH",
+            "counterpartyAccount": "DE02100500000054540402",
+            "variableSymbol": null,
+            "message": "Auszahlung Punkte Buchungsnummer 42",
+            "note": "4d88961d",
+            "bankCategory": null,
+            "statementAccount": "DE02120300000000202051",
+            "externalId": null
+        },
+        {
+            "date": "2026-07-06",
+            "amount": -78060,
+            "currency": "EUR",
+            "counterparty": "Bauernhof Koenig",
+            "counterpartyAccount": "AT611904300234573201",
+            "variableSymbol": null,
+            "message": "2539-2026 vzor",
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": "DE02120300000000202051",
+            "externalId": null
+        },
+        {
+            "date": "2026-06-30",
+            "amount": -997125,
+            "currency": "EUR",
+            "counterparty": "DKB AG",
+            "counterpartyAccount": "0000000000",
+            "variableSymbol": null,
+            "message": "Depot Wertp.Abrechn. Stueck 59,0000 ISIN DE0006047004",
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": "DE02120300000000202051",
+            "externalId": null
+        }
+    ]
+}

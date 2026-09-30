@@ -1,0 +1,18 @@
+{
+    "profile": "csob-avizo",
+    "rows": [
+        {
+            "date": "2026-09-17",
+            "amount": 1000000,
+            "currency": "CZK",
+            "counterparty": "Novak Petr",
+            "counterpartyAccount": "4028783033/0800",
+            "variableSymbol": "810315",
+            "message": "Monthly payment",
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": "123456/0300",
+            "externalId": null
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+{
+    "profile": "csob-pdf",
+    "rows": [
+        {
+            "date": "2026-08-03",
+            "amount": -10500,
+            "currency": "CZK",
+            "counterparty": null,
+            "counterpartyAccount": "2309140/5500",
+            "variableSymbol": null,
+            "message": "Prispevek na krouzek",
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": "123456/0300",
+            "externalId": null
+        },
+        {
+            "date": "2026-08-04",
+            "amount": 100000,
+            "currency": "CZK",
+            "counterparty": "Novak Petr",
+            "counterpartyAccount": "1186170183/0800",
+            "variableSymbol": null,
+            "message": null,
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": "123456/0300",
+            "externalId": null
+        },
+        {
+            "date": "2026-08-05",
+            "amount": -425400,
+            "currency": "CZK",
+            "counterparty": "SKOLA PRAHA",
+            "counterpartyAccount": "221133245/0300",
+            "variableSymbol": "83401202",
+            "message": "Platba faktury FVN-1/2026",
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": "123456/0300",
+            "externalId": null
+        },
+        {
+            "date": "2026-08-06",
+            "amount": -98000,
+            "currency": "CZK",
+            "counterparty": "RESTAURACE TESTOVACI PRAHA",
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": null,
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": "123456/0300",
+            "externalId": null
+        },
+        {
+            "date": "2026-08-07",
+            "amount": 250050,
+            "currency": "CZK",
+            "counterparty": "Novak Petr",
+            "counterpartyAccount": "4028783033/0800",
+            "variableSymbol": "7705150497",
+            "message": "Vraceni zalohy",
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": "123456/0300",
+            "externalId": null
+        }
+    ]
+}

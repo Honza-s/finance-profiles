@@ -1,0 +1,57 @@
+{
+    "profile": "partners-csv",
+    "rows": [
+        {
+            "date": "2026-08-29",
+            "amount": -17505,
+            "currency": "CZK",
+            "counterparty": "COFFEE SHOP",
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": null,
+            "note": "-8,44 USD kurzem 20,7404",
+            "bankCategory": null,
+            "statementAccount": "1234567890",
+            "externalId": "11111111-2222-3333-4444-555555555555"
+        },
+        {
+            "date": "2026-08-05",
+            "amount": 2500000,
+            "currency": "CZK",
+            "counterparty": "Vzor Jan",
+            "counterpartyAccount": "1234567890/0100",
+            "variableSymbol": "123456",
+            "message": "Vklad",
+            "note": "vlastní vklad",
+            "bankCategory": null,
+            "statementAccount": "1234567890",
+            "externalId": "66666666-7777-8888-9999-000000000000"
+        },
+        {
+            "date": "2026-08-11",
+            "amount": 2006988,
+            "currency": "CZK",
+            "counterparty": "AIRLINE REFUND",
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": null,
+            "note": "968,20 USD kurzem 20,7291",
+            "bankCategory": null,
+            "statementAccount": "1234567890",
+            "externalId": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+        },
+        {
+            "date": "2026-08-12",
+            "amount": -424796,
+            "currency": "CZK",
+            "counterparty": "ATM LISBOA",
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": null,
+            "note": "-203,00 USD kurzem 20,9259",
+            "bankCategory": null,
+            "statementAccount": "1234567890",
+            "externalId": "12121212-3434-5656-7878-909090909090"
+        }
+    ]
+}

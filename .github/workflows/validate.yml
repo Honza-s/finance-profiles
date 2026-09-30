@@ -1,0 +1,34 @@
+name: Kontrola katalogu
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Běží i na pull requesty z forků, takže nesmí potřebovat žádné tajemství
+# ani zápis. Skutečný parser je v neveřejném repozitáři aplikace a tahle
+# kontrola ho nespouští — viz CONTRIBUTING.md.
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Katalog odpovídá zdroji
+        run: |
+          node tools/build-index.mjs
+          if ! git diff --quiet -- docs/; then
+            echo "::error::Složka docs/ nesedí na profiles/. Spusť 'node tools/build-index.mjs' a výsledek commitni."
+            git diff --stat -- docs/
+            exit 1
+          fi
+
+      - name: Kontrola profilů a vzorků
+        run: node tools/validate.mjs
