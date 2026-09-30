@@ -1,0 +1,57 @@
+{
+    "profile": "csas-json",
+    "rows": [
+        {
+            "date": "2026-09-19",
+            "amount": -4560000,
+            "currency": "CZK",
+            "counterparty": "VZDUSNA LINKA",
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": null,
+            "note": "TESTCITY PT",
+            "bankCategory": "Cestovní výdaje",
+            "statementAccount": null,
+            "externalId": null
+        },
+        {
+            "date": "2026-08-06",
+            "amount": 15040,
+            "currency": "CZK",
+            "counterparty": null,
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": null,
+            "note": null,
+            "bankCategory": "Náhrady",
+            "statementAccount": null,
+            "externalId": null
+        },
+        {
+            "date": "2026-08-04",
+            "amount": 70000,
+            "currency": "CZK",
+            "counterparty": "Vzor Jan",
+            "counterpartyAccount": "CZ1101000000001234567890",
+            "variableSymbol": "123456",
+            "message": "Splátka",
+            "note": null,
+            "bankCategory": "Převod mezi vlastními účty",
+            "statementAccount": null,
+            "externalId": null
+        },
+        {
+            "date": "2026-07-03",
+            "amount": -110050,
+            "currency": "CZK",
+            "counterparty": "Krámek s.r.o.",
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": null,
+            "note": "Praha 5 CZ",
+            "bankCategory": "On-line nákupy",
+            "statementAccount": null,
+            "externalId": null
+        }
+    ]
+}

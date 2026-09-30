@@ -1,0 +1,111 @@
+{
+  "id": "csob-csv",
+  "bank": "ČSOB",
+  "label": "ČSOB — export pohybů (CSV)",
+  "version": 1,
+  "format": "delimited",
+  "catalogue": {
+    "country": "CZ",
+    "keywords": [
+      "čsob",
+      "csob",
+      "ceskoslovenska obchodni banka"
+    ],
+    "howTo": "Export pohybů z internetového bankovnictví ČSOB, formát CSV."
+  },
+  "detect": {
+    "fileNamePattern": "(?i)csob.*\\.csv$",
+    "contentContains": [
+      "datum zaúčtování",
+      "číslo protiúčtu"
+    ]
+  },
+  "delimited": {
+    "encoding": "auto",
+    "delimiter": ";",
+    "quote": "\"",
+    "headerMustContain": [
+      "datum zaúčtování",
+      "částka",
+      "zůstatek"
+    ]
+  },
+  "row": {
+    "accountNumber": {
+      "from": "číslo účtu"
+    },
+    "date": {
+      "from": "datum zaúčtování",
+      "date": "dd.MM.yyyy"
+    },
+    "amount": {
+      "from": "částka",
+      "number": {
+        "decimal": ",",
+        "grouping": " "
+      }
+    },
+    "currency": {
+      "from": "měna",
+      "default": "CZK"
+    },
+    "balance": {
+      "from": "zůstatek",
+      "number": {
+        "decimal": ",",
+        "grouping": " "
+      }
+    },
+    "counterpartyName": {
+      "from": "jméno protistrany",
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ]
+    },
+    "counterpartyAccount": {
+      "template": "{číslo protiúčtu}/{kód banky protiúčtu}"
+    },
+    "variableSymbol": {
+      "from": "variabilní symbol"
+    },
+    "constantSymbol": {
+      "from": "konstantní symbol"
+    },
+    "specificSymbol": {
+      "from": "specifický symbol"
+    },
+    "message": {
+      "from": "zpráva",
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ]
+    },
+    "note": {
+      "template": "{vlastní poznámka} {název trvalého příkazu}",
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ]
+    },
+    "operation": {
+      "from": "označení operace"
+    },
+    "bankCategory": {
+      "from": "kategorie"
+    },
+    "externalId": {
+      "from": "ID transakce"
+    }
+  },
+  "bankCategoryMapping": {
+    "TV, internet, telefon": "Internet a telefon",
+    "Vzdělání": "Škola a školka",
+    "Pojištění": "Pojištění",
+    "Provoz domácnosti": "Energie"
+  }
+}

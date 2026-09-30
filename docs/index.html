@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finance — profily výpisů</title>
+<meta name="description" content="Veřejný katalog profilů bankovních výpisů pro aplikaci Finance.">
+<style>
+  :root {
+    --bg: #fbfdf7; --fg: #1a1c19; --muted: #43483f;
+    --line: #dde5d5; --accent: #146c43; --card: #eef4ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12140f; --fg: #e2e3dd; --muted: #c2c8bb;
+      --line: #434941; --accent: #7fd7a4; --card: #1d211a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0 16px 64px; background: var(--bg); color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 44rem; margin: 0 auto; }
+  header { padding: 56px 0 8px; }
+  h1 { font-size: 2rem; margin: 0 0 8px; }
+  h2 { font-size: 1.2rem; margin: 40px 0 10px; padding-top: 16px; border-top: 1px solid var(--line); }
+  p, li { color: var(--muted); }
+  .lede { font-size: 1.1rem; color: var(--fg); }
+  a { color: var(--accent); }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em; }
+  .card { background: var(--card); border-radius: 12px; padding: 4px 20px; margin: 20px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: .95rem; }
+  th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--line); }
+  th { color: var(--fg); } td { color: var(--muted); }
+  footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--line); font-size: .9rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>Profily výpisů</h1>
+  <p class="lede">Katalog pro aplikaci <strong>Finance</strong>. Popisuje, kde ve výpisu
+  z které banky leží datum, částka a protistrana.</p>
+</header>
+
+<p>Profil je data, ne kód. Nová banka proto znamená přidat soubor, ne čekat
+na novou verzi aplikace — a poslat ho může kdokoliv.</p>
+
+<div class="card">
+  <p><strong>Seznam ke stažení:</strong>
+  <a href="profiles/index.json">profiles/index.json</a></p>
+</div>
+
+<h2>Banky v katalogu</h2>
+<table>
+  <thead><tr><th>Banka</th><th>Formát</th><th>Profil</th></tr></thead>
+  <tbody>
+    <tr><td>Česká spořitelna</td><td>CSV</td><td><a href="profiles/csas-csv.json"><code>csas-csv</code></a></td></tr>
+    <tr><td>Česká spořitelna</td><td>JSON</td><td><a href="profiles/csas-json.json"><code>csas-json</code></a></td></tr>
+    <tr><td>ČSOB</td><td>CSV</td><td><a href="profiles/csob-csv.json"><code>csob-csv</code></a></td></tr>
+    <tr><td>ČSOB</td><td>PDF</td><td><a href="profiles/csob-pdf.json"><code>csob-pdf</code></a></td></tr>
+    <tr><td>ČSOB</td><td>avízo e-mailem</td><td><a href="profiles/csob-avizo.json"><code>csob-avizo</code></a></td></tr>
+    <tr><td>DKB</td><td>CSV</td><td><a href="profiles/dkb-csv.json"><code>dkb-csv</code></a></td></tr>
+    <tr><td>Partners Banka</td><td>CSV</td><td><a href="profiles/partners-csv.json"><code>partners-csv</code></a></td></tr>
+  </tbody>
+</table>
+
+<h2>Chybí tu tvoje banka?</h2>
+<p>Přidej ji — potřeba je profil, anonymizovaný vzorek výpisu a soubor s tím,
+co z toho vzorku má vyjít. Postup je v
+<a href="https://github.com/Honza-s/finance-profiles/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+
+<h2>Soukromí</h2>
+<p>Aplikace hledá v tomhle seznamu až u sebe v telefonu, ne dotazem na server —
+jinak by prozradila, u které banky jsi. <a href="privacy/">Zásady ochrany soukromí</a>.</p>
+
+<footer>
+  <a href="https://github.com/Honza-s/finance-profiles">Zdrojový kód katalogu na GitHubu</a>
+</footer>
+</main>
+</body>
+</html>

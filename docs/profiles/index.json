@@ -1,0 +1,141 @@
+{
+  "schema": 1,
+  "updated": "2026-09-30",
+  "count": 7,
+  "profiles": [
+    {
+      "id": "csas-csv",
+      "bank": "Česká spořitelna",
+      "label": "Česká spořitelna — export pohybů (CSV)",
+      "country": "CZ",
+      "format": "delimited",
+      "kind": "statement",
+      "version": 1,
+      "keywords": [
+        "česká spořitelna",
+        "spořitelna",
+        "csas",
+        "erste",
+        "george"
+      ],
+      "howTo": "Export pohybů z internetového bankovnictví George, formát CSV.",
+      "file": "csas-csv.json",
+      "bytes": 2055,
+      "sha256": "0e0313e487e48c7d0e9509151222df5d2c4da84cbf3f923993e6ef4acda1bb27"
+    },
+    {
+      "id": "csas-json",
+      "bank": "Česká spořitelna",
+      "label": "Česká spořitelna — export pohybů (JSON)",
+      "country": "CZ",
+      "format": "json",
+      "kind": "statement",
+      "version": 1,
+      "keywords": [
+        "česká spořitelna",
+        "spořitelna",
+        "csas",
+        "erste",
+        "george"
+      ],
+      "howTo": "Export pohybů z internetového bankovnictví George, formát JSON. Oproti CSV nese navíc IBAN protistrany a kategorii od banky.",
+      "file": "csas-json.json",
+      "bytes": 4061,
+      "sha256": "734e48a45d297b34ade89272d3f1045936d2b0aad383a2ee0c99f7aa8ea1acac"
+    },
+    {
+      "id": "csob-avizo",
+      "bank": "ČSOB",
+      "label": "ČSOB — avízo e-mailem",
+      "country": "CZ",
+      "format": "single",
+      "kind": "notification",
+      "version": 1,
+      "keywords": [
+        "čsob",
+        "csob",
+        "avízo",
+        "e-mail",
+        "notifikace"
+      ],
+      "howTo": "Avízo o platbě, které ČSOB posílá e-mailem. Načítá se ze schránky, ne ze souboru.",
+      "file": "csob-avizo.json",
+      "bytes": 3626,
+      "sha256": "e1c988389ead755ef8693476609fd1fd994f94b351219ab88bde9d5eae5bb283"
+    },
+    {
+      "id": "csob-csv",
+      "bank": "ČSOB",
+      "label": "ČSOB — export pohybů (CSV)",
+      "country": "CZ",
+      "format": "delimited",
+      "kind": "statement",
+      "version": 1,
+      "keywords": [
+        "čsob",
+        "csob",
+        "ceskoslovenska obchodni banka"
+      ],
+      "howTo": "Export pohybů z internetového bankovnictví ČSOB, formát CSV.",
+      "file": "csob-csv.json",
+      "bytes": 2289,
+      "sha256": "579a5ee869d61782ccb62913ee8bb441ae8c744fc15fa5fecb9fef752b09e707"
+    },
+    {
+      "id": "csob-pdf",
+      "bank": "ČSOB",
+      "label": "ČSOB — výpis v PDF",
+      "country": "CZ",
+      "format": "textRegex",
+      "kind": "statement",
+      "version": 2,
+      "keywords": [
+        "čsob",
+        "csob",
+        "výpis",
+        "pdf"
+      ],
+      "howTo": "Měsíční výpis z účtu nebo z kreditní karty ČSOB ve formátu PDF.",
+      "file": "csob-pdf.json",
+      "bytes": 5575,
+      "sha256": "12e3cf253862489af203d32ef0c6c62b83f90e7501a2f1e7873abbcfc5ee71aa"
+    },
+    {
+      "id": "dkb-csv",
+      "bank": "DKB",
+      "label": "DKB — Umsatzliste Girokonto (CSV)",
+      "country": "DE",
+      "format": "delimited",
+      "kind": "statement",
+      "version": 1,
+      "keywords": [
+        "dkb",
+        "deutsche kreditbank",
+        "umsatzliste",
+        "girokonto"
+      ],
+      "howTo": "Export Umsatzliste z internetového bankovnictví DKB, formát CSV.",
+      "file": "dkb-csv.json",
+      "bytes": 2408,
+      "sha256": "1c0d2f5ef54815fddb3f83c61877428b2054ad0dd5b46752c6757e45814585a4"
+    },
+    {
+      "id": "partners-csv",
+      "bank": "Partners Banka",
+      "label": "Partners Banka — výpis pohybů (CSV)",
+      "country": "CZ",
+      "format": "delimited",
+      "kind": "statement",
+      "version": 1,
+      "keywords": [
+        "partners",
+        "partners banka",
+        "partners bank"
+      ],
+      "howTo": "Výpis pohybů z Partners Banky, formát CSV. Název souboru nepřejmenovávej — je v něm číslo účtu.",
+      "file": "partners-csv.json",
+      "bytes": 3047,
+      "sha256": "f13dcaa7d5d95c25beebf2d30d59584cb7ed7b4e86c4816b2b83681b84620ab8"
+    }
+  ]
+}

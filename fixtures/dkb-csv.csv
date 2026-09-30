@@ -1,0 +1,13 @@
+﻿"Girokonto";"DE02120300000000202051"
+
+"Kontostand vom 30.09.2026:";"10,80 €"
+""
+"Buchungsdatum";"Wertstellung";"Status";"Zahlungspflichtige*r";"Zahlungsempfänger*in";"Verwendungszweck";"Umsatztyp";"IBAN";"Betrag (€)";"Gläubiger-ID";"Mandatsreferenz";"Kundenreferenz"
+"25.09.26";"25.09.26";"Gebucht";"Vzor Jan";"Ristorante Napoli";"tax 3 days 2 adults";"Ausgang";"IT60X0542811101000000123456";"-27";"";"";""
+"09.09.26";"09.09.26";"Gebucht";"Vzor Jan";"Vzor Jan";"";"Ausgang";"DE02120300000000202051";"-1.029";"";"";""
+"09.09.26";"09.09.26";"Gebucht";"Arbeitgeber GmbH";"Vzor Jan";"Gehalt";"Eingang";"LT121000011101001000";"1.029";"";"";""
+"26.08.26";"25.08.26";"Gebucht";"Portal GmbH";"Vzor Jan";"Auszahlung Punkte   Buchungsnummer 42";"Eingang";"DE02100500000054540402";"0,34";"";"";"4d88961d"
+"06.07.26";"06.07.26";"Gebucht";"Vzor Jan";"Bauernhof Koenig";"1234-2026  vzor";"Ausgang";"AT611904300234573201";"-780,6";"";"";""
+"30.06.26";"02.07.26";"Gebucht";"Vzor Jan";"DKB AG";"Depot Wertp.Abrechn. Stueck 50,0000 ISIN DE0007236101";"Ausgang";"0000000000";"-8.765,40";"";"";""
+"01.07.26";"01.07.26";"Gebucht";"DKB AG";"DKB AG";"Abrechnung 30.06.2026 siehe Anlage";"Eingang";"1000000001";"0";"";"";""
+"28.09.26";"28.09.26";"Vorgemerkt";"Vzor Jan";"Supermarkt";"Kartenzahlung";"Ausgang";"DE02120300000000202051";"-15,49";"";"";""

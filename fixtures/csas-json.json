@@ -1,0 +1,99 @@
+[
+  {
+    "transactionId": null,
+    "booking": "2026-09-19T00:00:00.000+0200",
+    "execution": null,
+    "valuation": null,
+    "partnerName": "VZDUSNA LINKA",
+    "partnerAccount": {
+      "iban": null,
+      "bic": null,
+      "number": null,
+      "bankCode": "0",
+      "countryCode": "PT",
+      "prefix": null
+    },
+    "amount": { "value": -4560000, "precision": 2, "currency": "CZK" },
+    "balance": null,
+    "reference": null,
+    "note": null,
+    "categories": ["Cestovní výdaje"],
+    "constantSymbol": null,
+    "variableSymbol": null,
+    "specificSymbol": null,
+    "receiverReference": null,
+    "receiverName": null,
+    "senderName": null,
+    "merchantName": null,
+    "cardLocation": "TESTCITY PT",
+    "bookingTypeTranslation": null,
+    "ownerAccountNumber": null,
+    "ownerAccountTitle": "JMENO PRIJMENI"
+  },
+  {
+    "transactionId": null,
+    "booking": "2026-08-06T00:00:00.000+0200",
+    "valuation": null,
+    "partnerName": null,
+    "partnerAccount": {
+      "iban": null,
+      "number": null,
+      "bankCode": "0",
+      "countryCode": "CZ"
+    },
+    "amount": { "value": 15040, "precision": 2, "currency": "CZK" },
+    "balance": null,
+    "note": null,
+    "categories": ["Náhrady"],
+    "receiverReference": null,
+    "cardLocation": null,
+    "bookingTypeTranslation": null,
+    "ownerAccountNumber": null,
+    "ownerAccountTitle": "JMENO PRIJMENI"
+  },
+  {
+    "transactionId": null,
+    "booking": "2026-08-04T00:00:00.000+0200",
+    "valuation": null,
+    "partnerName": "Vzor Jan",
+    "partnerAccount": {
+      "iban": "CZ1101000000001234567890",
+      "bic": "KOMBCZPP",
+      "number": "1234567890",
+      "bankCode": "0100",
+      "countryCode": "CZ",
+      "prefix": "000000"
+    },
+    "amount": { "value": 70000, "precision": 2, "currency": "CZK" },
+    "balance": null,
+    "note": null,
+    "categories": ["Převod mezi vlastními účty"],
+    "variableSymbol": "123456",
+    "receiverReference": "Splátka",
+    "cardLocation": null,
+    "bookingTypeTranslation": null,
+    "ownerAccountNumber": null,
+    "ownerAccountTitle": "JMENO PRIJMENI"
+  },
+  {
+    "transactionId": null,
+    "booking": "2026-07-03T00:00:00.000+0200",
+    "valuation": null,
+    "partnerName": "Krámek s.r.o.",
+    "partnerAccount": {
+      "iban": null,
+      "number": null,
+      "bankCode": "0",
+      "countryCode": "CZ"
+    },
+    "amount": { "value": -110050, "precision": 2, "currency": "CZK" },
+    "balance": null,
+    "note": null,
+    "categories": ["On-line nákupy"],
+    "receiverReference": null,
+    "cardLocation": "Praha 5 CZ",
+    "bookingTypeTranslation": null,
+    "ownerAccountNumber": null,
+    "ownerAccountTitle": "JMENO PRIJMENI"
+  }
+]

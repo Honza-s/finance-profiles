@@ -1,0 +1,129 @@
+{
+  "id": "dkb-csv",
+  "bank": "DKB",
+  "label": "DKB — Umsatzliste Girokonto (CSV)",
+  "version": 1,
+  "format": "delimited",
+  "catalogue": {
+    "country": "DE",
+    "keywords": [
+      "dkb",
+      "deutsche kreditbank",
+      "umsatzliste",
+      "girokonto"
+    ],
+    "howTo": "Export Umsatzliste z internetového bankovnictví DKB, formát CSV."
+  },
+  "detect": {
+    "fileNamePattern": "(?i)umsatzliste.*\\.csv$",
+    "contentContains": [
+      "buchungsdatum",
+      "umsatztyp",
+      "verwendungszweck"
+    ]
+  },
+  "delimited": {
+    "encoding": "auto",
+    "delimiter": ";",
+    "quote": "\"",
+    "headerMustContain": [
+      "buchungsdatum",
+      "umsatztyp",
+      "betrag"
+    ]
+  },
+  "rowFilters": [
+    {
+      "field": "Status",
+      "drop": [
+        "Vorgemerkt"
+      ]
+    }
+  ],
+  "documentFields": {
+    "ownIban": {
+      "pattern": "^\"[^\"]*\";\"(DE\\d{20})\"",
+      "group": 1
+    }
+  },
+  "row": {
+    "accountNumber": {
+      "from": "ownIban"
+    },
+    "date": {
+      "from": "Buchungsdatum",
+      "date": "dd.MM.yy"
+    },
+    "bookingDate": {
+      "from": "Wertstellung",
+      "date": "dd.MM.yy"
+    },
+    "amount": {
+      "from": "Betrag (€)",
+      "number": {
+        "decimal": ",",
+        "grouping": "."
+      },
+      "fallback": {
+        "from": "Betrag"
+      }
+    },
+    "currency": {
+      "default": "EUR"
+    },
+    "direction": {
+      "field": {
+        "from": "Umsatztyp"
+      },
+      "debitValues": [
+        "Ausgang"
+      ],
+      "creditValues": [
+        "Eingang"
+      ]
+    },
+    "counterpartyName": {
+      "choose": {
+        "on": "Umsatztyp",
+        "cases": {
+          "Ausgang": {
+            "from": "Zahlungsempfänger*in"
+          },
+          "Eingang": {
+            "from": "Zahlungspflichtige*r"
+          }
+        },
+        "otherwise": {
+          "from": "Zahlungsempfänger*in"
+        }
+      },
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ]
+    },
+    "counterpartyAccount": {
+      "from": "IBAN"
+    },
+    "message": {
+      "from": "Verwendungszweck",
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ]
+    },
+    "note": {
+      "template": "{Mandatsreferenz} {Kundenreferenz}",
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ]
+    },
+    "operation": {
+      "from": "Umsatztyp"
+    }
+  }
+}

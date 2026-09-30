@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finance — zásady ochrany soukromí</title>
+<meta name="description" content="Zásady ochrany soukromí aplikace Finance (com.honza.finance). Privacy policy.">
+<style>
+  :root {
+    --bg: #fbfdf7;
+    --fg: #1a1c19;
+    --muted: #43483f;
+    --line: #dde5d5;
+    --accent: #146c43;
+    --card: #eef4ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12140f;
+      --fg: #e2e3dd;
+      --muted: #c2c8bb;
+      --line: #434941;
+      --accent: #7fd7a4;
+      --card: #1d211a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 16px 64px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+  header { padding: 48px 0 8px; }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 8px; }
+  h2 { font-size: 1.3rem; margin: 40px 0 12px; padding-top: 16px; border-top: 1px solid var(--line); }
+  h3 { font-size: 1.05rem; margin: 24px 0 6px; }
+  p, li { color: var(--muted); }
+  li { margin-bottom: 6px; }
+  strong { color: var(--fg); }
+  .lede { font-size: 1.1rem; color: var(--fg); }
+  .updated { color: var(--muted); font-size: .9rem; margin: 0; }
+  .card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+  .card p:first-child { margin-top: 0; }
+  .card p:last-child { margin-bottom: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: .95rem; }
+  th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--fg); }
+  td { color: var(--muted); }
+  a { color: var(--accent); }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em; }
+  .lang { margin-top: 72px; }
+  footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--line); font-size: .9rem; color: var(--muted); }
+  @media (max-width: 560px) {
+    table, thead, tbody, tr, th, td { display: block; }
+    thead { display: none; }
+    tr { border-bottom: 1px solid var(--line); padding: 10px 0; }
+    th, td { border: 0; padding: 2px 0; }
+    td::before { content: attr(data-label) ": "; color: var(--fg); }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>Zásady ochrany soukromí</h1>
+  <p class="updated">Aplikace <strong>Finance</strong> (<code>com.honza.finance</code>) · platné od 30. 9. 2026</p>
+</header>
+
+<p class="lede">Aplikace si vaše finanční údaje nechává v telefonu. Neexistuje žádný server,
+na kterém by ležely vaše platby, a neexistuje uživatelský účet, pod kterým by se sbíraly.</p>
+
+<div class="card">
+  <p><strong>Shrnutí:</strong> aplikace nesbírá žádná data o uživatelích, nemá analytiku ani reklamu
+  a nevyžaduje registraci. Na internet sahá jen kvůli cenám akcií a kurzům, a dál jen tehdy,
+  když si sami zapnete zálohu do cloudu nebo čtení výpisů z e-mailu.</p>
+</div>
+
+<h2>Kdo zpracování provádí</h2>
+<p>Aplikaci vyvíjí a vydává Jan Šafka jako fyzická osoba. Kontakt:
+<a href="mailto:VYPLNIT@PRIKLAD.CZ">VYPLNIT@PRIKLAD.CZ</a>.</p>
+<p>Protože aplikace nemá server ani účty, nemá vývojář k vašim finančním údajům přístup
+a nemůže je nikomu předat — nejsou u něj uložené.</p>
+
+<h2>Co aplikace ukládá a kde</h2>
+<p>Všechno, co do aplikace zadáte nebo co si načte z výpisu, se ukládá <strong>jen do úložiště
+aplikace ve vašem telefonu</strong>:</p>
+<ul>
+  <li>pohyby na účtech, účty, kategorie, štítky a poznámky,</li>
+  <li>pravidla, která se aplikace naučila při zatřiďování,</li>
+  <li>osoby, vůči kterým evidujete pohledávky a dluhy,</li>
+  <li>investice: obchody, dividendy a stažené ceny,</li>
+  <li>nastavení aplikace a uložené reporty.</li>
+</ul>
+<p>Hesla a klíče — přístupové heslo k záloze, heslo k e-mailové schránce a token ke cloudovému
+úložišti — se neukládají v čitelné podobě. Každé je zašifrované vlastním klíčem v
+<strong>Android KeyStore</strong>, tedy v části telefonu, ze které klíč nejde přečíst ani aplikací samotnou.</p>
+
+<h2>Kdy aplikace sahá na internet</h2>
+<p>Toto je úplný seznam. Mimo tyto případy aplikace žádné spojení nenavazuje.</p>
+
+<table>
+  <thead>
+    <tr><th>Komu</th><th>Kdy</th><th>Co se odesílá</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Komu"><strong>Yahoo Finance</strong><br><code>query1.finance.yahoo.com</code></td>
+      <td data-label="Kdy">Když máte v aplikaci investice — kvůli cenám a měnovým kurzům.</td>
+      <td data-label="Co se odesílá">Značka instrumentu (například <code>CEZ</code>) a měnový pár.
+      <strong>Neodesílá se, kolik kusů vlastníte, ani hodnota portfolia.</strong></td>
+    </tr>
+    <tr>
+      <td data-label="Komu"><strong>Disk Google</strong><br><code>googleapis.com</code></td>
+      <td data-label="Kdy">Jen když si zapnete zálohu na Disk Google.</td>
+      <td data-label="Co se odesílá">Zašifrovaný soubor zálohy. Aplikace má oprávnění pouze ke své
+      vlastní skryté složce (<code>drive.appdata</code>) — na zbytek vašeho Disku nevidí.</td>
+    </tr>
+    <tr>
+      <td data-label="Komu"><strong>FileJump</strong><br><code>drive.filejump.com</code></td>
+      <td data-label="Kdy">Jen když si zapnete zálohu do FileJumpu a vložíte svůj token.</td>
+      <td data-label="Co se odesílá">Zašifrovaný soubor zálohy.</td>
+    </tr>
+    <tr>
+      <td data-label="Komu"><strong>Váš e-mailový server</strong><br>(IMAP, adresu zadáváte vy)</td>
+      <td data-label="Kdy">Jen když si zapnete čtení avíz a výpisů z e-mailu.</td>
+      <td data-label="Co se odesílá">Přihlašovací údaje k vaší schránce a dotaz na zprávy.
+      Schránka se otevírá <strong>jen pro čtení</strong> — aplikace v ní nic nemaže,
+      neoznačuje jako přečtené ani neodesílá.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>OneDrive a jiné synchronizované složky:</strong> aplikace s Microsoftem ani jinou
+službou nekomunikuje. Zálohu umí uložit do běžné složky v telefonu — pokud tu složku
+synchronizuje nějaká jiná aplikace, děje se to mimo Finance a řídí se to jejími pravidly.</p>
+
+<h2>Co aplikace nedělá</h2>
+<ul>
+  <li>Nemá analytiku, měření ani nástroje pro hlášení pádů.</li>
+  <li>Neobsahuje reklamu ani reklamní identifikátory.</li>
+  <li>Nevyžaduje registraci a nevytváří uživatelský účet.</li>
+  <li>Nesleduje polohu, nečte kontakty, fotografie ani SMS.</li>
+  <li>Neprodává, nepronajímá ani nesdílí žádná data — žádná k tomu nemá.</li>
+  <li>Nezobrazuje personalizovaný obsah a neprovádí profilování.</li>
+</ul>
+
+<h2>Oprávnění, která aplikace žádá</h2>
+<table>
+  <thead>
+    <tr><th>Oprávnění</th><th>Proč</th></tr>
+  </thead>
+  <tbody>
+    <tr><td data-label="Oprávnění"><code>INTERNET</code></td>
+        <td data-label="Proč">Stažení cen a kurzů, volitelná záloha do cloudu, volitelné čtení schránky.</td></tr>
+    <tr><td data-label="Oprávnění"><code>ACCESS_NETWORK_STATE</code></td>
+        <td data-label="Proč">Zjištění, jestli je připojení, aby se stahování nespouštělo nadarmo.</td></tr>
+    <tr><td data-label="Oprávnění"><code>POST_NOTIFICATIONS</code></td>
+        <td data-label="Proč">Upozornění, že se něco stáhlo nebo že čeká pohyb na zatřídění.</td></tr>
+  </tbody>
+</table>
+<p>Přístup k souborům aplikace nemá jako trvalé oprávnění: soubor výpisu i složku pro zálohu
+vybíráte vy v systémovém dialogu a aplikace dostane přístup jen k tomu, co jí předáte.</p>
+
+<h2>Zálohy</h2>
+<p>Záloha je jeden soubor zašifrovaný <strong>AES-256-GCM</strong> klíčem odvozeným z vašeho
+hesla funkcí PBKDF2 se 210 000 iteracemi. Heslo <strong>telefon neopustí</strong> — neodesílá se
+nikam a není uložené v žádné záloze.</p>
+<div class="card">
+  <p><strong>Pozor:</strong> bez toho hesla zálohu nerozšifruje nikdo, včetně vývojáře.
+  Je to záměr, ne opomenutí. Zapomenuté heslo znamená ztracenou zálohu.</p>
+</div>
+
+<h2>Smazání dat</h2>
+<p>Vaše data jsou v telefonu, takže je smažete odinstalováním aplikace nebo vymazáním jejích dat
+v nastavení Androidu. Zálohy, které jste si uložili do složky nebo do cloudu, smažete tam, kde jsou —
+aplikace o nich po odinstalování nic neví. Žádnou žádost o výmaz není komu posílat,
+protože žádná vaše data nikde jinde nejsou.</p>
+
+<h2>Děti</h2>
+<p>Aplikace není určena dětem do 13 let a nesbírá vědomě žádné údaje o nich.</p>
+
+<h2>Změny</h2>
+<p>Pokud se zásady změní, bude tady nové datum platnosti a podstatné změny budou popsané
+v poznámkách k verzi aplikace.</p>
+
+<section class="lang" lang="en">
+  <h1>Privacy policy</h1>
+  <p class="updated"><strong>Finance</strong> app (<code>com.honza.finance</code>) · effective 30 September 2026</p>
+
+  <p class="lede">The app keeps your financial data on your phone. There is no server holding your
+  transactions and no user account they are collected under.</p>
+
+  <div class="card">
+    <p><strong>Summary:</strong> the app collects no user data, contains no analytics and no advertising,
+    and requires no sign-up. It reaches the internet only for share prices and exchange rates, and beyond
+    that only if you switch on cloud backup or e-mail statement reading yourself.</p>
+  </div>
+
+  <h2>Who is responsible</h2>
+  <p>The app is developed and published by Jan Šafka as an individual. Contact:
+  <a href="mailto:VYPLNIT@PRIKLAD.CZ">VYPLNIT@PRIKLAD.CZ</a>. Because the app has no server and no
+  accounts, the developer has no access to your financial data and cannot hand it to anyone — it is
+  not held anywhere outside your device.</p>
+
+  <h2>What the app stores, and where</h2>
+  <p>Everything you enter, and everything read from a bank statement, is stored
+  <strong>only in the app's storage on your phone</strong>: transactions, accounts, categories, tags and
+  notes; the rules the app learned while classifying; people you track debts with; investments, trades,
+  dividends and downloaded prices; app settings and saved reports.</p>
+  <p>Passwords and keys — the backup passphrase, your mailbox password and the cloud storage token —
+  are never stored in readable form. Each is encrypted with its own key in the
+  <strong>Android KeyStore</strong>.</p>
+
+  <h2>When the app uses the internet</h2>
+  <p>This is the complete list. The app makes no other connections.</p>
+  <table>
+    <thead><tr><th>Who</th><th>When</th><th>What is sent</th></tr></thead>
+    <tbody>
+      <tr>
+        <td data-label="Who"><strong>Yahoo Finance</strong></td>
+        <td data-label="When">When you hold investments — for prices and exchange rates.</td>
+        <td data-label="What is sent">The instrument ticker and the currency pair.
+        <strong>How many units you own and your portfolio value are never sent.</strong></td>
+      </tr>
+      <tr>
+        <td data-label="Who"><strong>Google Drive</strong></td>
+        <td data-label="When">Only if you turn on Google Drive backup.</td>
+        <td data-label="What is sent">The encrypted backup file. The app is limited to its own hidden
+        folder (<code>drive.appdata</code>) and cannot see the rest of your Drive.</td>
+      </tr>
+      <tr>
+        <td data-label="Who"><strong>FileJump</strong></td>
+        <td data-label="When">Only if you turn on FileJump backup and supply your token.</td>
+        <td data-label="What is sent">The encrypted backup file.</td>
+      </tr>
+      <tr>
+        <td data-label="Who"><strong>Your own mail server</strong> (IMAP)</td>
+        <td data-label="When">Only if you turn on reading statements from e-mail.</td>
+        <td data-label="What is sent">Your mailbox credentials and a search request. The mailbox is
+        opened <strong>read-only</strong> — the app never deletes, marks as read, or sends anything.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><strong>OneDrive and other synced folders:</strong> the app does not talk to Microsoft or any
+  similar service. It can write a backup to an ordinary folder on your phone; if another app syncs that
+  folder, that happens outside this app and under that app's terms.</p>
+
+  <h2>What the app does not do</h2>
+  <ul>
+    <li>No analytics, telemetry or crash reporting.</li>
+    <li>No advertising and no advertising identifiers.</li>
+    <li>No sign-up and no user account.</li>
+    <li>No location, contacts, photos or SMS access.</li>
+    <li>No selling, renting or sharing of data — there is none to share.</li>
+    <li>No profiling and no personalised content.</li>
+  </ul>
+
+  <h2>Permissions</h2>
+  <p><code>INTERNET</code> for prices, optional cloud backup and optional mailbox reading;
+  <code>ACCESS_NETWORK_STATE</code> to avoid pointless downloads; <code>POST_NOTIFICATIONS</code> to tell
+  you something was downloaded or is waiting to be classified. File access is not a standing permission:
+  you pick each statement file and backup folder in the system dialog.</p>
+
+  <h2>Backups</h2>
+  <p>A backup is a single file encrypted with <strong>AES-256-GCM</strong> using a key derived from your
+  passphrase with PBKDF2 at 210,000 iterations. The passphrase <strong>never leaves the device</strong>.
+  Without it nobody can decrypt the backup, including the developer. That is by design: a forgotten
+  passphrase means a lost backup.</p>
+
+  <h2>Deleting your data</h2>
+  <p>Your data is on your phone, so uninstalling the app or clearing its data in Android settings
+  removes it. Backups you saved to a folder or to cloud storage are deleted where they are. There is no
+  deletion request to send, because none of your data is held anywhere else.</p>
+
+  <h2>Children</h2>
+  <p>The app is not directed at children under 13 and does not knowingly collect data about them.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the effective date above will change and significant changes will be
+  described in the app's release notes.</p>
+</section>
+
+<footer>
+  Finance · com.honza.finance
+</footer>
+
+</main>
+</body>
+</html>
