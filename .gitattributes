@@ -1,0 +1,9 @@
+# Konce radku drzime na LF vsude. Otisk sha256 v katalogu se pocita ze
+# souboru na disku a GitHub Pages servirují to, co je v commitu - kdyby
+# Windows prepsal LF na CRLF, otisk by nesedel a aplikace by stazeny
+# profil odmitla.
+* text=auto eol=lf
+
+# Vzorky vypisu se nesmi sahnout vubec. Jeden z nich je v UTF-16 a u PDF
+# textu zalezi na koncich radku, protoze se v nem hleda vyrazem s kotvami.
+fixtures/** -text
