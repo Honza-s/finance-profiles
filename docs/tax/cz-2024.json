@@ -1,0 +1,110 @@
+{
+  "id": "cz-2024",
+  "country": "CZ",
+  "label": "Česko do roku 2024",
+  "version": 1,
+  "validFrom": 2000,
+  "validTo": 2024,
+  "currency": "CZK",
+  "note": "Do konce roku 2024 nebyl strop na osvobození časovým testem a krypto žádný časový ani hodnotový test nemělo — každý prodej byl ostatní příjem podle § 10.",
+  "source": "zákon č. 586/1992 Sb. ve znění do 31. 12. 2024",
+  "groups": [
+    {
+      "id": "securities",
+      "label": "Cenné papíry",
+      "instrumentTypes": [
+        "STOCK",
+        "ETF",
+        "BOND"
+      ],
+      "timeTestYears": 3,
+      "valueTestLimitMinor": 10000000,
+      "valueTestIsThreshold": true,
+      "rate": 0.15,
+      "offsetLossesWithinGroup": true,
+      "source": "§ 4 odst. 1 písm. w)"
+    },
+    {
+      "id": "crypto",
+      "label": "Kryptoaktiva",
+      "instrumentTypes": [
+        "CRYPTO"
+      ],
+      "rate": 0.15,
+      "offsetLossesWithinGroup": true,
+      "source": "§ 10 — bez osvobozovacích testů"
+    },
+    {
+      "id": "other",
+      "label": "Ostatní",
+      "instrumentTypes": [
+        "OTHER"
+      ],
+      "rate": 0.15,
+      "offsetLossesWithinGroup": true,
+      "source": "§ 10"
+    }
+  ],
+  "dividends": {
+    "rate": 0.15,
+    "domesticWithheldIsFinal": true,
+    "source": "§ 8",
+    "defaultForeign": {
+      "maxSourceRate": 0,
+      "method": "NONE",
+      "note": "Se státem není smlouva — sraženou daň nelze započíst."
+    },
+    "treaties": {
+      "US": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT",
+        "note": "Bez formuláře W-8BEN sráží broker 30 %."
+      },
+      "DE": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "AT": {
+        "maxSourceRate": 0.1,
+        "method": "SIMPLE_CREDIT"
+      },
+      "SK": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "PL": {
+        "maxSourceRate": 0.1,
+        "method": "SIMPLE_CREDIT"
+      },
+      "FR": {
+        "maxSourceRate": 0.1,
+        "method": "SIMPLE_CREDIT"
+      },
+      "NL": {
+        "maxSourceRate": 0.1,
+        "method": "SIMPLE_CREDIT"
+      },
+      "GB": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "IE": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "CH": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "CA": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "JP": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      }
+    }
+  },
+  "annualRates": {}
+}

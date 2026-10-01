@@ -292,6 +292,91 @@ if (!existsSync(indexPath)) {
   }
 }
 
+
+// --- daňové profily ----------------------------------------------------------
+//
+// Přísnější než u bank. Špatný bankovní profil přečte výpis viditelně blbě;
+// špatná sazba ve smlouvě se promítne do přiznání a nikdo si toho nevšimne.
+
+const taxFiles = existsSync("tax")
+  ? readdirSync("tax").filter((f) => f.endsWith(".json")).sort()
+  : [];
+
+const taxIds = new Set();
+
+for (const file of taxFiles) {
+  const where = `tax/${file}`;
+  let profile;
+  try {
+    profile = JSON.parse(readFileSync(where, "utf8"));
+  } catch (e) {
+    fail(where, `není platný JSON (${e.message})`);
+    continue;
+  }
+
+  if (profile.id !== basename(file, ".json")) {
+    fail(where, `"id" je "${profile.id}", ale soubor se jmenuje "${basename(file, ".json")}"`);
+  }
+  if (taxIds.has(profile.id)) fail(where, `"id" se opakuje`);
+  taxIds.add(profile.id);
+
+  if (!/^[A-Z]{2}$/.test(profile.country || "")) {
+    fail(where, `"country" má být kód země, třeba "CZ"`);
+  }
+  if (!Number.isInteger(profile.validFrom)) {
+    fail(where, `chybí "validFrom" — bez roku se neví, na co profil platí`);
+  }
+  if (profile.validTo != null && profile.validTo < profile.validFrom) {
+    fail(where, `"validTo" je dřív než "validFrom"`);
+  }
+
+  // Sazby jsou podíly, ne procenta. "15" místo "0.15" by stonásobilo daň.
+  const rate = (label, value) => {
+    if (value == null) return;
+    if (typeof value !== "number" || value < 0 || value > 1) {
+      fail(where, `${label} = ${value}; sazba se píše jako podíl (0.15), ne procenta`);
+    }
+  };
+
+  rate('dividends.rate', profile.dividends?.rate);
+  rate('dividends.defaultForeign.maxSourceRate', profile.dividends?.defaultForeign?.maxSourceRate);
+  for (const [code, treaty] of Object.entries(profile.dividends?.treaties ?? {})) {
+    if (!/^[A-Z]{2}$/.test(code)) fail(where, `smlouva "${code}" nemá kód země`);
+    rate(`smlouva ${code}`, treaty?.maxSourceRate);
+  }
+  for (const [code, value] of Object.entries(profile.annualRates ?? {})) {
+    if (!/^[A-Z]{3}$/.test(code)) fail(where, `jednotný kurz "${code}" nemá kód měny`);
+    if (typeof value !== "number" || value <= 0) {
+      fail(where, `jednotný kurz ${code} = ${value}; čeká se korun za jednotku`);
+    }
+  }
+
+  // Bez zdroje se po roce nedá dohledat, odkud to číslo je.
+  if (!profile.source && !profile.dividends?.source) {
+    notes.push(`${where}: chybí "source" — odkud ta pravidla jsou`);
+  }
+}
+
+if (taxFiles.length > 0) {
+  const taxIndex = "docs/tax/index.json";
+  if (!existsSync(taxIndex)) {
+    fail(taxIndex, `chybí — spusť "node tools/build-index.mjs" a výsledek commitni`);
+  } else {
+    const published = JSON.parse(readFileSync(taxIndex, "utf8"));
+    for (const id of taxIds) {
+      if (!published.profiles.some((p) => p.id === id)) {
+        fail(taxIndex, `neobsahuje "${id}" — spusť "node tools/build-index.mjs"`);
+      }
+    }
+    // Rocnik, ktery uz jednou vysel, nesmi zmizet: priznani se podava zpetne.
+    for (const entry of published.profiles) {
+      if (!existsSync(`tax/${entry.file}`)) {
+        fail(taxIndex, `odkazuje na ${entry.file}, ale zdroj už v tax/ není`);
+      }
+    }
+  }
+}
+
 // --- výsledek ----------------------------------------------------------------
 
 for (const note of notes) console.log(`poznámka: ${note}`);
@@ -301,4 +386,4 @@ if (problems.length) {
   for (const p of problems) console.error(`  ✗ ${p}`);
   process.exit(1);
 }
-console.log(`Katalog v pořádku: ${profileFiles.length} profilů.`);
+console.log(`Katalog v pořádku: ${profileFiles.length} profilů bank a ${taxFiles.length} daňových.`);

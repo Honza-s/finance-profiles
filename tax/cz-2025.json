@@ -1,0 +1,116 @@
+{
+  "id": "cz-2025",
+  "country": "CZ",
+  "label": "Česko 2025 a dál",
+  "version": 1,
+  "validFrom": 2025,
+  "currency": "CZK",
+  "note": "Sazby ze smluv o zamezení dvojího zdanění jsou ty pro drobného investora (portfoliovou účast). U větších podílů bývají nižší. Než podle toho podáš přiznání, ověř si je ve smlouvě s konkrétním státem — tenhle soubor jde opravit bez nové verze aplikace.",
+  "source": "zákon č. 586/1992 Sb. o daních z příjmů, § 4 odst. 1 písm. w), § 8, § 10",
+  "exemptionCapMinor": 4000000000,
+  "groups": [
+    {
+      "id": "securities",
+      "label": "Cenné papíry",
+      "instrumentTypes": [
+        "STOCK",
+        "ETF",
+        "BOND"
+      ],
+      "timeTestYears": 3,
+      "valueTestLimitMinor": 10000000,
+      "valueTestIsThreshold": true,
+      "rate": 0.15,
+      "offsetLossesWithinGroup": true,
+      "source": "§ 4 odst. 1 písm. w) — časový test 3 roky, hodnotový test 100 000 Kč příjmu za rok"
+    },
+    {
+      "id": "crypto",
+      "label": "Kryptoaktiva",
+      "instrumentTypes": [
+        "CRYPTO"
+      ],
+      "timeTestYears": 3,
+      "valueTestLimitMinor": 10000000,
+      "valueTestIsThreshold": true,
+      "rate": 0.15,
+      "offsetLossesWithinGroup": true,
+      "source": "zákon č. 32/2025 Sb. — od 15. 2. 2025 obdobné testy jako u cenných papírů, vlastní limit"
+    },
+    {
+      "id": "other",
+      "label": "Ostatní",
+      "instrumentTypes": [
+        "OTHER"
+      ],
+      "rate": 0.15,
+      "offsetLossesWithinGroup": true,
+      "source": "§ 10 — ostatní příjmy, bez osvobozovacích testů"
+    }
+  ],
+  "dividends": {
+    "rate": 0.15,
+    "domesticWithheldIsFinal": true,
+    "source": "§ 8 — zahraniční dividenda jde do přiznání, tuzemská je sražená u zdroje",
+    "defaultForeign": {
+      "maxSourceRate": 0,
+      "method": "NONE",
+      "note": "Se státem není smlouva — sraženou daň nelze započíst."
+    },
+    "treaties": {
+      "US": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT",
+        "note": "Bez formuláře W-8BEN sráží broker 30 %. Nad 15 % se nezapočítá, o zbytek se žádá v USA."
+      },
+      "DE": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "AT": {
+        "maxSourceRate": 0.1,
+        "method": "SIMPLE_CREDIT"
+      },
+      "SK": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "PL": {
+        "maxSourceRate": 0.1,
+        "method": "SIMPLE_CREDIT"
+      },
+      "FR": {
+        "maxSourceRate": 0.1,
+        "method": "SIMPLE_CREDIT"
+      },
+      "NL": {
+        "maxSourceRate": 0.1,
+        "method": "SIMPLE_CREDIT"
+      },
+      "GB": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT",
+        "note": "Británie z dividend obvykle nesráží nic."
+      },
+      "IE": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT",
+        "note": "Irské ETF nerezidentům obvykle nesráží nic. Akumulační ETF dividendu nevyplácí vůbec."
+      },
+      "CH": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT",
+        "note": "Švýcarsko sráží 35 %, nad 15 % se žádá o vrácení tam."
+      },
+      "CA": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "JP": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      }
+    }
+  },
+  "annualRates": {}
+}
