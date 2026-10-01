@@ -20,6 +20,21 @@ Pro banku s identifikátorem `<id>` (malá písmena, pomlčky — třeba `fio-cs
 Pak spusť `node tools/build-index.mjs` a commitni i změny ve složce `docs/` —
 to je to, co si stahuje aplikace.
 
+## Daňové profily jsou výjimka
+
+Do složky `tax/` pull requesty nepřijímáme. Píše je jen správce repozitáře.
+
+Není to nedůvěra. Špatný bankovní profil přečte výpis viditelně blbě a člověk
+si toho všimne při prvním importu. **Špatná sazba ve smlouvě o zamezení
+dvojího zdanění se promítne do přiznání a nevšimne si toho nikdo** — až
+případně finanční úřad, a to už je pozdě.
+
+Když víš o chybě v daňových pravidlech nebo máš čerstvě vyhlášený jednotný
+kurz, založ issue s odkazem na zdroj. Opraví se to tam.
+
+Ročníky se nikdy nemažou. Přiznání se podává zpětně a opravné ještě později,
+takže profil za rok 2024 musí být k mání i za pět let.
+
 ## Vzorek musí být anonymizovaný
 
 Do veřejného repozitáře nepatří skutečný výpis. Vezmi svůj, **přepiš v něm

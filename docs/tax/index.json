@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "updated": "2026-10-01",
+  "count": 2,
+  "profiles": [
+    {
+      "id": "cz-2024",
+      "country": "CZ",
+      "label": "Česko do roku 2024",
+      "version": 1,
+      "validFrom": 2000,
+      "validTo": 2024,
+      "file": "cz-2024.json",
+      "bytes": 2624,
+      "sha256": "8aa31b0232452d57d7f5d2878c6be67fd8e0ab7dd2d41dd379eb85a165f9819b"
+    },
+    {
+      "id": "cz-2025",
+      "country": "CZ",
+      "label": "Česko 2025 a dál",
+      "version": 1,
+      "validFrom": 2025,
+      "validTo": null,
+      "file": "cz-2025.json",
+      "bytes": 3460,
+      "sha256": "cde2dbb88e8d9ca734f7aa8481ef3ca3bf90404f906c28f7ef38db15de2c837c"
+    }
+  ]
+}

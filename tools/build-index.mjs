@@ -48,3 +48,45 @@ const index = {
 
 writeFileSync(`${OUT}/index.json`, JSON.stringify(index, null, 2) + "\n", "utf8");
 console.log(`Hotovo: ${profiles.length} profilů do ${OUT}/`);
+
+// --- daňové profily ---------------------------------------------------------
+//
+// Ročníky se nikdy nemažou. Přiznání se podává zpětně a opravné ještě
+// později, takže profil za 2024 musí být k mání i za pět let. Proto se
+// vedle sebe publikují všechny, ne jen „aktuální".
+
+const TAX_OUT = "docs/tax";
+rmSync(TAX_OUT, { recursive: true, force: true });
+mkdirSync(TAX_OUT, { recursive: true });
+
+const taxProfiles = [];
+
+for (const file of readdirSync("tax").filter((f) => f.endsWith(".json")).sort()) {
+  const text = readFileSync(`tax/${file}`, "utf8");
+  const profile = JSON.parse(text);
+
+  writeFileSync(`${TAX_OUT}/${file}`, text, "utf8");
+
+  taxProfiles.push({
+    id: profile.id,
+    country: profile.country,
+    label: profile.label,
+    version: profile.version ?? 1,
+    validFrom: profile.validFrom,
+    validTo: profile.validTo ?? null,
+    file,
+    bytes: Buffer.byteLength(text, "utf8"),
+    sha256: createHash("sha256").update(text, "utf8").digest("hex")
+  });
+}
+
+writeFileSync(
+  `${TAX_OUT}/index.json`,
+  JSON.stringify(
+    { schema: 1, updated: index.updated, count: taxProfiles.length, profiles: taxProfiles },
+    null,
+    2
+  ) + "\n",
+  "utf8"
+);
+console.log(`Hotovo: ${taxProfiles.length} daňových profilů do ${TAX_OUT}/`);

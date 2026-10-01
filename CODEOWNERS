@@ -2,3 +2,12 @@
 # kdokoliv, ale slucuje ho jen spravce - kontrola v CI skutecny parser
 # spustit neumi, ten je v neverejnem repozitari aplikace.
 * @Honza-s
+
+# Danove profily pise jen spravce, pull requesty se na ne neprijimaji.
+#
+# Spatny bankovni profil precte vypis viditelne blbe a clovek si toho
+# vsimne pri prvnim importu. Spatna sazba ve smlouve o zamezeni dvojiho
+# zdaneni se promitne do priznani a nevsimne si toho nikdo - az pripadne
+# financni urad.
+/tax/ @Honza-s
+/docs/tax/ @Honza-s
