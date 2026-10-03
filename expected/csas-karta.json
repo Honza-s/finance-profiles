@@ -1,0 +1,18 @@
+{
+    "profile": "csas-karta",
+    "rows": [
+        {
+            "date": "2026-09-17",
+            "amount": -34990,
+            "currency": "CZK",
+            "counterparty": "SUPERMARKET TEST 1111",
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": null,
+            "note": "karta Testovaci karta 1234",
+            "bankCategory": null,
+            "statementAccount": "1234567890/0800",
+            "externalId": null
+        }
+    ]
+}
