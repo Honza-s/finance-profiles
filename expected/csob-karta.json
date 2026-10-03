@@ -1,0 +1,18 @@
+{
+    "profile": "csob-karta",
+    "rows": [
+        {
+            "date": "2026-09-17",
+            "amount": -215000,
+            "currency": "CZK",
+            "counterparty": "PUJCOVNA AUT 1 PRAHA 4 CZ",
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": null,
+            "note": "karta *1234 · 100,00 USD",
+            "bankCategory": null,
+            "statementAccount": "123456/0300",
+            "externalId": null
+        }
+    ]
+}

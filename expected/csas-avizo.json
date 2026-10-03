@@ -1,0 +1,18 @@
+{
+    "profile": "csas-avizo",
+    "rows": [
+        {
+            "date": "2026-09-17",
+            "amount": 21050,
+            "currency": "EUR",
+            "counterparty": null,
+            "counterpartyAccount": "19-2000145399/0800",
+            "variableSymbol": "1234567890",
+            "message": "Platba za zbozi",
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": "1234567890/0800",
+            "externalId": null
+        }
+    ]
+}

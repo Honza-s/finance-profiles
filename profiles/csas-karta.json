@@ -1,0 +1,133 @@
+{
+  "id": "csas-karta",
+  "bank": "Česká spořitelna",
+  "label": "Česká spořitelna — platba kartou e-mailem",
+  "version": 1,
+  "format": "single",
+  "kind": "notification",
+  "catalogue": {
+    "country": "CZ",
+    "keywords": [
+      "česká spořitelna",
+      "ceska sporitelna",
+      "čsas",
+      "csas",
+      "karta",
+      "platba kartou",
+      "e-mail",
+      "notifikace"
+    ],
+    "howTo": "Zpráva „Platba kartou u …“ z České spořitelny. Načítá se ze schránky, ne ze souboru. Pohyb je předběžný a výpis ho později nahradí. Platba v cizí měně se schválně přeskakuje: spořitelna v téhle zprávě posílá jen částku v měně obchodníka a korunovou by si aplikace musela vymyslet."
+  },
+  "detect": {
+    "contentContains": [
+      "potvrzujeme platbu kartou",
+      "je k dispozici"
+    ]
+  },
+  "documentFields": {
+    "datum": {
+      "pattern": "ze dne\\s+(\\d{1,2}\\.\\s*\\d{1,2}\\.\\s*\\d{4})",
+      "group": 1
+    },
+    "castka": {
+      "pattern": "ve výši\\s+([\\d\\u00A0 ]+,\\d{2})",
+      "group": 1
+    },
+    "mena": {
+      "pattern": "ve výši\\s+[\\d\\u00A0 ]+,\\d{2}\\s+(Kč|[A-Z]{3})",
+      "group": 1
+    },
+    "karta": {
+      "pattern": "platbu kartou\\s+(.+?)\\s+ve výši",
+      "group": 1
+    },
+    "obchodnik": {
+      "pattern": "ze dne\\s+\\d{1,2}\\.\\s*\\d{1,2}\\.\\s*\\d{4}\\s+u\\s+(.+?)\\s*\\.\\s*$",
+      "group": 1
+    },
+    "ucet": {
+      "pattern": "Na účtu\\s+(?:.*?\\s)?(\\d{6,})\\s+je k dispozici",
+      "group": 1
+    },
+    "menaShoda": {
+      "pattern": "ve výši\\s+[\\d\\u00A0 ]+,\\d{2}\\s+(Kč|[A-Z]{3})[\\s\\S]*?je k dispozici\\s+[\\d\\u00A0 ]+,\\d{2}\\s+\\1",
+      "group": 1,
+      "default": ""
+    },
+    "smer": {
+      "pattern": "(potvrzujeme platbu kartou)",
+      "group": 1,
+      "default": "potvrzujeme platbu kartou"
+    }
+  },
+  "rowFilters": [
+    {
+      "field": "menaShoda",
+      "drop": [
+        ""
+      ]
+    }
+  ],
+  "row": {
+    "date": {
+      "from": "datum",
+      "date": "d.M.yyyy",
+      "transforms": [
+        {
+          "op": "replace",
+          "pattern": "\\s",
+          "with": ""
+        }
+      ]
+    },
+    "amount": {
+      "from": "castka",
+      "number": {
+        "decimal": ",",
+        "grouping": " "
+      }
+    },
+    "direction": {
+      "field": {
+        "from": "smer"
+      },
+      "debitValues": [
+        "potvrzujeme platbu kartou"
+      ]
+    },
+    "currency": {
+      "from": "mena",
+      "transforms": [
+        {
+          "op": "replace",
+          "pattern": "Kč",
+          "with": "CZK"
+        }
+      ],
+      "default": "CZK"
+    },
+    "accountNumber": {
+      "template": "{ucet}/0800"
+    },
+    "counterpartyName": {
+      "from": "obchodnik",
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ]
+    },
+    "operation": {
+      "default": "Platba kartou"
+    },
+    "note": {
+      "template": "karta {karta}",
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ]
+    }
+  }
+}

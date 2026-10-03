@@ -1,8 +1,32 @@
 {
   "schema": 1,
-  "updated": "2026-10-01",
-  "count": 7,
+  "updated": "2026-10-03",
+  "count": 10,
   "profiles": [
+    {
+      "id": "csas-avizo",
+      "bank": "Česká spořitelna",
+      "label": "Česká spořitelna — avízo o platbě e-mailem",
+      "country": "CZ",
+      "format": "single",
+      "kind": "notification",
+      "version": 1,
+      "keywords": [
+        "česká spořitelna",
+        "ceska sporitelna",
+        "čsas",
+        "csas",
+        "avízo",
+        "přišla platba",
+        "odešla platba",
+        "e-mail",
+        "notifikace"
+      ],
+      "howTo": "Zprávy „Přišla platba“, „Odešla platba“ a „Odešla trvalá platba“ z České spořitelny. Načítají se ze schránky, ne ze souboru. Pohyb je předběžný a výpis ho později nahradí. Zůstatek se schválně nebere: spořitelna píše zůstatek k dispozici, ne zaúčtovaný, a ten dvěma účtům nesedí.",
+      "file": "csas-avizo.json",
+      "bytes": 5318,
+      "sha256": "3ef563e7533998b14501f620a51a42a0ba02951f75a38198933d513178c352e9"
+    },
     {
       "id": "csas-csv",
       "bank": "Česká spořitelna",
@@ -44,6 +68,29 @@
       "sha256": "734e48a45d297b34ade89272d3f1045936d2b0aad383a2ee0c99f7aa8ea1acac"
     },
     {
+      "id": "csas-karta",
+      "bank": "Česká spořitelna",
+      "label": "Česká spořitelna — platba kartou e-mailem",
+      "country": "CZ",
+      "format": "single",
+      "kind": "notification",
+      "version": 1,
+      "keywords": [
+        "česká spořitelna",
+        "ceska sporitelna",
+        "čsas",
+        "csas",
+        "karta",
+        "platba kartou",
+        "e-mail",
+        "notifikace"
+      ],
+      "howTo": "Zpráva „Platba kartou u …“ z České spořitelny. Načítá se ze schránky, ne ze souboru. Pohyb je předběžný a výpis ho později nahradí. Platba v cizí měně se schválně přeskakuje: spořitelna v téhle zprávě posílá jen částku v měně obchodníka a korunovou by si aplikace musela vymyslet.",
+      "file": "csas-karta.json",
+      "bytes": 3033,
+      "sha256": "2d60d9ef67b59e27021ad8848595d38a107dcad00c5c3a796c2103e27f241872"
+    },
+    {
       "id": "csob-avizo",
       "bank": "ČSOB",
       "label": "ČSOB — avízo e-mailem",
@@ -80,6 +127,28 @@
       "file": "csob-csv.json",
       "bytes": 2289,
       "sha256": "579a5ee869d61782ccb62913ee8bb441ae8c744fc15fa5fecb9fef752b09e707"
+    },
+    {
+      "id": "csob-karta",
+      "bank": "ČSOB",
+      "label": "ČSOB — platba kartou e-mailem",
+      "country": "CZ",
+      "format": "single",
+      "kind": "notification",
+      "version": 1,
+      "keywords": [
+        "čsob",
+        "csob",
+        "karta",
+        "platba kartou",
+        "moje info",
+        "e-mail",
+        "notifikace"
+      ],
+      "howTo": "Zpráva „Moje info - Platba kartou“, kterou ČSOB posílá při autorizaci karty. Načítá se ze schránky, ne ze souboru. Jde o blokaci, ne o zaúčtování — pohyb je předběžný a výpis ho později nahradí. Bere se částka blokace, protože ta je v měně účtu; částka v měně obchodníka zůstává v poznámce.",
+      "file": "csob-karta.json",
+      "bytes": 3408,
+      "sha256": "dda8a80f7f2b35c5d8a3b1d9ecffa29bd15ed078bd71e10a3ad88ba6012e9a46"
     },
     {
       "id": "csob-pdf",
