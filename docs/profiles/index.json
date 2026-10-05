@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-10-03",
+  "updated": "2026-10-05",
   "count": 10,
   "profiles": [
     {
@@ -97,7 +97,7 @@
       "country": "CZ",
       "format": "single",
       "kind": "notification",
-      "version": 1,
+      "version": 2,
       "keywords": [
         "čsob",
         "csob",
@@ -107,8 +107,8 @@
       ],
       "howTo": "Avízo o platbě, které ČSOB posílá e-mailem. Načítá se ze schránky, ne ze souboru.",
       "file": "csob-avizo.json",
-      "bytes": 3626,
-      "sha256": "e1c988389ead755ef8693476609fd1fd994f94b351219ab88bde9d5eae5bb283"
+      "bytes": 3728,
+      "sha256": "acceb3a07dba9c59371584a88fdc51b7cb9338f08b43bb57b0a4ab5d4b6728d0"
     },
     {
       "id": "csob-csv",

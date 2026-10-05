@@ -2,7 +2,7 @@
   "id": "csob-avizo",
   "bank": "ČSOB",
   "label": "ČSOB — avízo e-mailem",
-  "version": 1,
+  "version": 2,
   "format": "single",
   "kind": "notification",
   "catalogue": {
@@ -21,6 +21,9 @@
       "Parametry platby",
       "zaúčtována transakce typu"
     ]
+  },
+  "single": {
+    "splitBefore": "dne\\s+\\d{1,2}\\.\\s?\\d{1,2}\\.\\s?\\d{4}\\s+byla na účtu"
   },
   "documentFields": {
     "datum": {
