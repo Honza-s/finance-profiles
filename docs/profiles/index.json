@@ -117,7 +117,7 @@
       "country": "CZ",
       "format": "delimited",
       "kind": "statement",
-      "version": 1,
+      "version": 2,
       "keywords": [
         "čsob",
         "csob",
@@ -125,8 +125,8 @@
       ],
       "howTo": "Export pohybů z internetového bankovnictví ČSOB, formát CSV.",
       "file": "csob-csv.json",
-      "bytes": 2289,
-      "sha256": "579a5ee869d61782ccb62913ee8bb441ae8c744fc15fa5fecb9fef752b09e707"
+      "bytes": 2563,
+      "sha256": "7855f9c3d412b6eea4fb05e70d0c681695b80070d96a2b505b8b0acdf51a62c2"
     },
     {
       "id": "csob-karta",

@@ -2,7 +2,7 @@
   "id": "csob-csv",
   "bank": "ČSOB",
   "label": "ČSOB — export pohybů (CSV)",
-  "version": 1,
+  "version": 2,
   "format": "delimited",
   "catalogue": {
     "country": "CZ",
@@ -62,7 +62,20 @@
         {
           "op": "collapseSpaces"
         }
-      ]
+      ],
+      "fallback": {
+        "from": "zpráva",
+        "transforms": [
+          {
+            "op": "regexExtract",
+            "pattern": "Místo:\\s*(.+)$",
+            "group": 1
+          },
+          {
+            "op": "collapseSpaces"
+          }
+        ]
+      }
     },
     "counterpartyAccount": {
       "template": "{číslo protiúčtu}/{kód banky protiúčtu}"

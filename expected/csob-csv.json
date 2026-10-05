@@ -135,7 +135,7 @@
             "date": "2026-09-07",
             "amount": -1000000,
             "currency": "CZK",
-            "counterparty": null,
+            "counterparty": "AC01 TESTOVACI 1",
             "counterpartyAccount": null,
             "variableSymbol": "400000001",
             "message": "Částka: 10000 CZK 05.09.2026, Místo: AC01 TESTOVACI 1",
