@@ -1,0 +1,18 @@
+{
+    "profile": "oznameni-banky",
+    "rows": [
+        {
+            "date": "2026-09-21",
+            "amount": -24990,
+            "currency": "CZK",
+            "counterparty": "OBCHOD U NÁDRAŽÍ 0001",
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": "Dobrá zpráva — Vaše platba kartou 249,90 Kč u OBCHOD U NÁDRAŽÍ 0001 prošla.",
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": null,
+            "externalId": "partners|vzor|1"
+        }
+    ]
+}

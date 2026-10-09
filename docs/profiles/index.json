@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "updated": "2026-10-05",
-  "count": 10,
+  "updated": "2026-10-09",
+  "count": 11,
   "profiles": [
     {
       "id": "csas-avizo",
@@ -187,6 +187,28 @@
       "file": "dkb-csv.json",
       "bytes": 2408,
       "sha256": "1c0d2f5ef54815fddb3f83c61877428b2054ad0dd5b46752c6757e45814585a4"
+    },
+    {
+      "id": "oznameni-banky",
+      "bank": "Oznámení z telefonu",
+      "label": "Oznámení bankovní aplikace",
+      "country": "CZ",
+      "format": "single",
+      "kind": "notification",
+      "version": 1,
+      "keywords": [
+        "oznámení",
+        "notifikace",
+        "partners",
+        "česká spořitelna",
+        "george",
+        "čsob",
+        "smart"
+      ],
+      "howTo": "Oznámení bankovních aplikací Partners, George (ČS) a ČSOB Smart v telefonu. Zapíná se v Nastavení › Oznámení bank, nic se nestahuje ze souboru.",
+      "file": "oznameni-banky.json",
+      "bytes": 1627,
+      "sha256": "34a3f4b10f34a40d2b7a4674fb2d662c2aefb1af7ed17b007163ebdd99622814"
     },
     {
       "id": "partners-csv",

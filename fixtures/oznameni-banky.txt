@@ -1,0 +1,8 @@
+FINANCE-OZNAMENI-BANKY
+Banka: partners
+Datum: 21.9.2026
+Částka: -249,90
+Měna: CZK
+Protistrana: OBCHOD U NÁDRAŽÍ 0001
+Zpráva: Dobrá zpráva — Vaše platba kartou 249,90 Kč u OBCHOD U NÁDRAŽÍ 0001 prošla.
+ID: partners|vzor|1

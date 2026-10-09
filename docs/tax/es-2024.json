@@ -1,0 +1,164 @@
+{
+  "id": "es-2024",
+  "country": "ES",
+  "label": "Španělsko 2024",
+  "version": 1,
+  "validFrom": 2024,
+  "validTo": 2024,
+  "currency": "EUR",
+  "note": "Sestaveno podle veřejných zdrojů k říjnu 2026 a zatím neověřeno daňovým poradcem. Sazby ze smluv o zamezení dvojího zdanění jsou zjednodušeně 15 % pro drobného investora. Než podle toho podáš přiznání, ověř si je. Baskicko a Navarra mají vlastní sazby. Ztráty jde započíst i proti dividendám (do 25 %) a převádět 4 roky — tady se započítávají jen uvnitř skupiny.",
+  "source": "Ley 35/2006 del IRPF, art. 46, 49, 66, 76 (base imponible del ahorro)",
+  "savingsBrackets": [
+    {
+      "upToMinor": 600000,
+      "rate": 0.19
+    },
+    {
+      "upToMinor": 5000000,
+      "rate": 0.21
+    },
+    {
+      "upToMinor": 20000000,
+      "rate": 0.23
+    },
+    {
+      "upToMinor": 30000000,
+      "rate": 0.27
+    },
+    {
+      "rate": 0.28
+    }
+  ],
+  "groups": [
+    {
+      "id": "securities",
+      "label": "Ganancias patrimoniales",
+      "instrumentTypes": [
+        "STOCK",
+        "ETF",
+        "BOND",
+        "OTHER"
+      ],
+      "rate": 0.19,
+      "offsetLossesWithinGroup": true,
+      "source": "čl. 46 — zisky z prodeje patří do base del ahorro, bez časového testu"
+    },
+    {
+      "id": "crypto",
+      "label": "Criptomonedas",
+      "instrumentTypes": [
+        "CRYPTO"
+      ],
+      "rate": 0.19,
+      "offsetLossesWithinGroup": true,
+      "source": "zisky z kryptoměn jsou rovněž v base del ahorro"
+    }
+  ],
+  "dividends": {
+    "rate": 0.19,
+    "domesticWithheldIsFinal": false,
+    "source": "čl. 25, 80 — tuzemská srážka 19 % je záloha a započte se celá; zahraniční nejvýš do smluvní sazby",
+    "defaultForeign": {
+      "maxSourceRate": 0.15,
+      "method": "SIMPLE_CREDIT"
+    },
+    "treaties": {
+      "US": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "CA": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "CH": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "GB": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "IE": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "NL": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "FR": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "DE": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "AT": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "BE": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "LU": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "IT": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "ES": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "PT": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "DK": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "SE": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "NO": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "FI": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "PL": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "CZ": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "SK": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "HU": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "JP": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "AU": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      }
+    }
+  }
+}

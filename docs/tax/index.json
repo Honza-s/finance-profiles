@@ -1,8 +1,19 @@
 {
   "schema": 1,
-  "updated": "2026-10-03",
-  "count": 2,
+  "updated": "2026-10-09",
+  "count": 8,
   "profiles": [
+    {
+      "id": "at-2023",
+      "country": "AT",
+      "label": "Rakousko 2023 a dál",
+      "version": 1,
+      "validFrom": 2023,
+      "validTo": null,
+      "file": "at-2023.json",
+      "bytes": 3626,
+      "sha256": "82faf99fc7420a7a4fdb8f60706a77480cf80b9dbf72deeebf61548fb6f72259"
+    },
     {
       "id": "cz-2024",
       "country": "CZ",
@@ -24,6 +35,61 @@
       "file": "cz-2025.json",
       "bytes": 3460,
       "sha256": "cde2dbb88e8d9ca734f7aa8481ef3ca3bf90404f906c28f7ef38db15de2c837c"
+    },
+    {
+      "id": "de-2024",
+      "country": "DE",
+      "label": "Německo 2024 a dál",
+      "version": 1,
+      "validFrom": 2024,
+      "validTo": null,
+      "file": "de-2024.json",
+      "bytes": 4199,
+      "sha256": "8436fe8ebe6d709afa8829166299d565098ac5f150d6fbbda187eb8a1ed5bb5b"
+    },
+    {
+      "id": "es-2024",
+      "country": "ES",
+      "label": "Španělsko 2024",
+      "version": 1,
+      "validFrom": 2024,
+      "validTo": 2024,
+      "file": "es-2024.json",
+      "bytes": 3986,
+      "sha256": "9a350045e72a317078c078e4a22f1716d5a8034c58c9e3d8772485f4991e0f72"
+    },
+    {
+      "id": "es-2025",
+      "country": "ES",
+      "label": "Španělsko 2025 a dál",
+      "version": 1,
+      "validFrom": 2025,
+      "validTo": null,
+      "file": "es-2025.json",
+      "bytes": 3973,
+      "sha256": "7cab216c491f18c7fb0623a304f51085bb4b7e3936fe8aefd53353ad6a9bb316"
+    },
+    {
+      "id": "sk-2025",
+      "country": "SK",
+      "label": "Slovensko 2025",
+      "version": 1,
+      "validFrom": 2025,
+      "validTo": 2025,
+      "file": "sk-2025.json",
+      "bytes": 4198,
+      "sha256": "66bc1b4229dccd80aba407710ea5eb737aa52abe6c4d5c025d50f47bbcc9ba3d"
+    },
+    {
+      "id": "sk-2026",
+      "country": "SK",
+      "label": "Slovensko 2026 a dál",
+      "version": 1,
+      "validFrom": 2026,
+      "validTo": null,
+      "file": "sk-2026.json",
+      "bytes": 4165,
+      "sha256": "cf69e28de8aa6a7b707a6ce5184328ac3a54ea4d675abf3d49fa003b70f42c60"
     }
   ]
 }

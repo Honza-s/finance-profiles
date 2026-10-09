@@ -1,0 +1,157 @@
+{
+  "id": "sk-2025",
+  "country": "SK",
+  "label": "Slovensko 2025",
+  "version": 1,
+  "validFrom": 2025,
+  "validTo": 2025,
+  "currency": "EUR",
+  "note": "Sestaveno podle veřejných zdrojů k říjnu 2026 a zatím neověřeno daňovým poradcem. Sazby ze smluv o zamezení dvojího zdanění jsou zjednodušeně 15 % pro drobného investora. Než podle toho podáš přiznání, ověř si je. Osvobození po roce platí jen pro papíry obchodované na regulovaném trhu aspoň rok. Nad cca 48 000 € příjmů je sazba 25 % a ze zisku se platí i zdravotní odvod — obojí tu není započtené.",
+  "source": "zákon č. 595/2003 Z. z. o dani z príjmov, § 8, § 9 ods. 1 písm. i), § 15, § 51e",
+  "groups": [
+    {
+      "id": "securities",
+      "label": "Cenné papiere",
+      "instrumentTypes": [
+        "STOCK",
+        "ETF",
+        "BOND"
+      ],
+      "timeTestYears": 1,
+      "valueTestLimitMinor": 50000,
+      "valueTestIsThreshold": false,
+      "valueTestOnGain": true,
+      "rate": 0.19,
+      "offsetLossesWithinGroup": true,
+      "source": "§ 9 ods. 1 písm. i) — po roce držení osvobozené (regulovaný trh); § 9 ods. 1 písm. g) — 500 € zisku za rok bez dane, daní sa len nad"
+    },
+    {
+      "id": "crypto",
+      "label": "Kryptoaktíva",
+      "instrumentTypes": [
+        "CRYPTO"
+      ],
+      "rate": 0.19,
+      "offsetLossesWithinGroup": false,
+      "source": "§ 8 — ostatné príjmy, bez časového testu; strata sa nezapočítava"
+    },
+    {
+      "id": "other",
+      "label": "Ostatné",
+      "instrumentTypes": [
+        "OTHER"
+      ],
+      "rate": 0.19,
+      "offsetLossesWithinGroup": true,
+      "source": "§ 8 — ostatné príjmy"
+    }
+  ],
+  "dividends": {
+    "rate": 0.1,
+    "domesticWithheldIsFinal": true,
+    "source": "§ 15 písm. e) — 10 % z dividend ze zisků za rok 2024 (vyplácených v roce 2025)",
+    "defaultForeign": {
+      "maxSourceRate": 0.0,
+      "method": "NONE",
+      "note": "Ze státu bez smlouvy se daní 35 % a srážka se nezapočte."
+    },
+    "treaties": {
+      "US": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "CA": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "CH": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "GB": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "IE": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "NL": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "FR": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "DE": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "AT": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "BE": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "LU": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "IT": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "ES": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "PT": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "DK": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "SE": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "NO": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "FI": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "PL": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "CZ": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "SK": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "HU": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "JP": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      },
+      "AU": {
+        "maxSourceRate": 0.15,
+        "method": "SIMPLE_CREDIT"
+      }
+    }
+  }
+}

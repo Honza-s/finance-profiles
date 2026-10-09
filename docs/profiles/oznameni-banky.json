@@ -1,0 +1,79 @@
+{
+  "id": "oznameni-banky",
+  "bank": "Oznámení z telefonu",
+  "label": "Oznámení bankovní aplikace",
+  "version": 1,
+  "format": "single",
+  "kind": "notification",
+  "catalogue": {
+    "country": "CZ",
+    "keywords": [
+      "oznámení",
+      "notifikace",
+      "partners",
+      "česká spořitelna",
+      "george",
+      "čsob",
+      "smart"
+    ],
+    "howTo": "Oznámení bankovních aplikací Partners, George (ČS) a ČSOB Smart v telefonu. Zapíná se v Nastavení › Oznámení bank, nic se nestahuje ze souboru."
+  },
+  "detect": {
+    "contentContains": [
+      "FINANCE-OZNAMENI-BANKY"
+    ]
+  },
+  "documentFields": {
+    "datum": {
+      "pattern": "(?m)^Datum: (\\d{1,2}\\.\\d{1,2}\\.\\d{4})$",
+      "group": 1
+    },
+    "castka": {
+      "pattern": "(?m)^Částka: (-?\\d+(?:,\\d{1,2})?)$",
+      "group": 1
+    },
+    "mena": {
+      "pattern": "(?m)^Měna: ([A-Z]{3})$",
+      "group": 1,
+      "default": "CZK"
+    },
+    "protistrana": {
+      "pattern": "(?m)^Protistrana: (.+)$",
+      "group": 1
+    },
+    "zprava": {
+      "pattern": "(?m)^Zpráva: (.+)$",
+      "group": 1
+    },
+    "id": {
+      "pattern": "(?m)^ID: (.+)$",
+      "group": 1
+    }
+  },
+  "row": {
+    "date": {
+      "from": "datum",
+      "date": "d.M.yyyy"
+    },
+    "amount": {
+      "from": "castka",
+      "number": {
+        "decimal": ",",
+        "grouping": ""
+      }
+    },
+    "currency": {
+      "from": "mena",
+      "default": "CZK"
+    },
+    "counterpartyName": {
+      "from": "protistrana"
+    },
+    "message": {
+      "from": "zprava"
+    },
+    "externalId": {
+      "from": "id"
+    }
+  }
+}
