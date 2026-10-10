@@ -1,0 +1,101 @@
+{
+  "id": "revolut-csv",
+  "bank": "Revolut",
+  "label": "Revolut — výpis (CSV)",
+  "version": 1,
+  "format": "delimited",
+  "catalogue": {
+    "country": "LT",
+    "keywords": [
+      "revolut",
+      "výpis",
+      "statement",
+      "csv"
+    ],
+    "howTo": "V aplikaci Revolut: účet v dané měně › Výpis › Excel/CSV. Každá měna se exportuje zvlášť. Poplatky (sloupec Fee) se k částce nepřičítají."
+  },
+  "detect": {
+    "contentContains": [
+      "Started Date",
+      "Completed Date",
+      "Description",
+      "Amount",
+      "Fee",
+      "State"
+    ]
+  },
+  "delimited": {
+    "encoding": "auto",
+    "delimiter": ",",
+    "quote": "\"",
+    "headerMustContain": [
+      "type",
+      "started date",
+      "amount",
+      "currency",
+      "state"
+    ]
+  },
+  "rowFilters": [
+    {
+      "field": "State",
+      "drop": [
+        "PENDING",
+        "REVERTED",
+        "DECLINED",
+        "FAILED"
+      ]
+    }
+  ],
+  "row": {
+    "date": {
+      "from": "Started Date",
+      "date": "yyyy-MM-dd",
+      "transforms": [
+        {
+          "op": "take",
+          "length": 10
+        }
+      ]
+    },
+    "bookingDate": {
+      "from": "Completed Date",
+      "date": "yyyy-MM-dd",
+      "transforms": [
+        {
+          "op": "take",
+          "length": 10
+        }
+      ]
+    },
+    "amount": {
+      "from": "Amount",
+      "number": {
+        "decimal": ".",
+        "grouping": ","
+      }
+    },
+    "balance": {
+      "from": "Balance",
+      "number": {
+        "decimal": ".",
+        "grouping": ","
+      }
+    },
+    "currency": {
+      "from": "Currency",
+      "default": "EUR"
+    },
+    "counterpartyName": {
+      "from": "Description",
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ]
+    },
+    "operation": {
+      "from": "Type"
+    }
+  }
+}

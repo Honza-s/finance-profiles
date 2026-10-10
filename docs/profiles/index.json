@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "updated": "2026-10-09",
-  "count": 11,
+  "updated": "2026-10-10",
+  "count": 14,
   "profiles": [
     {
       "id": "csas-avizo",
@@ -227,6 +227,64 @@
       "file": "partners-csv.json",
       "bytes": 3047,
       "sha256": "f13dcaa7d5d95c25beebf2d30d59584cb7ed7b4e86c4816b2b83681b84620ab8"
+    },
+    {
+      "id": "revolut-csv",
+      "bank": "Revolut",
+      "label": "Revolut — výpis (CSV)",
+      "country": "LT",
+      "format": "delimited",
+      "kind": "statement",
+      "version": 1,
+      "keywords": [
+        "revolut",
+        "výpis",
+        "statement",
+        "csv"
+      ],
+      "howTo": "V aplikaci Revolut: účet v dané měně › Výpis › Excel/CSV. Každá měna se exportuje zvlášť. Poplatky (sloupec Fee) se k částce nepřičítají.",
+      "file": "revolut-csv.json",
+      "bytes": 1843,
+      "sha256": "a53a98ebcf5b069f9965e7ed084d5e4a4fe08118b2f43e5919c6f82630208476"
+    },
+    {
+      "id": "revolut-odchozi",
+      "bank": "Revolut",
+      "label": "Revolut — odeslaný převod (e-mail)",
+      "country": "LT",
+      "format": "single",
+      "kind": "notification",
+      "version": 1,
+      "keywords": [
+        "revolut",
+        "převod",
+        "e-mail",
+        "avízo",
+        "odeslali jste"
+      ],
+      "howTo": "E-mail „Odeslali jste … uživateli …“, který Revolut posílá po odeslání převodu. Načítá se ze schránky.",
+      "file": "revolut-odchozi.json",
+      "bytes": 2481,
+      "sha256": "119401dd78d72b50d1e1a6d0f8b65acb1e1011c71c302a41168a5742c4257078"
+    },
+    {
+      "id": "revolut-prichozi",
+      "bank": "Revolut",
+      "label": "Revolut — oznámení příjemci (e-mail)",
+      "country": "LT",
+      "format": "single",
+      "kind": "notification",
+      "version": 1,
+      "keywords": [
+        "revolut",
+        "you've been sent",
+        "příchozí",
+        "e-mail"
+      ],
+      "howTo": "E-mail „You've been sent …“, který Revolut posílá příjemci převodu. Platba přijde na účet příjemce v jiné bance — ten vyber při prvním načtení.",
+      "file": "revolut-prichozi.json",
+      "bytes": 3425,
+      "sha256": "50e2c29b61a3f941dc57d1d4302081bbbed16fcc73cd85fd4c69489292054125"
     }
   ]
 }

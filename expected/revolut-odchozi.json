@@ -1,0 +1,18 @@
+{
+    "profile": "revolut-odchozi",
+    "rows": [
+        {
+            "date": "2026-10-09",
+            "amount": -123450,
+            "currency": "EUR",
+            "counterparty": "Petra Vzorová",
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": "Za chatu",
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": null,
+            "externalId": null
+        }
+    ]
+}
