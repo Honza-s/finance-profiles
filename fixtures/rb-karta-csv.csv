@@ -1,0 +1,5 @@
+﻿Číslo kreditní karty;Držitel karty;Datum transakce;Datum zúčtování;Typ transakce;Původní částka;Původní měna;Zaúčtovaná částka;Měna zaúčtování;Převodní kurs;Popis/Místo transakce;Vlastní poznámka;Název Obchodníka;Město
+"512345XXXXXX0042";"Petra Vzorová";"3. 9. 2026";"4. 9. 2026";"Platba na internetu Google Pay";"";"";"-612,40";"CZK";"";"ZELENINA U TONDY S.R.O.";"";"Zelenina U Tondy";""
+"512345XXXXXX0042";"Petra Vzorová";"5. 9. 2026";"7. 9. 2026";"Platba kartou";"-18,90";"EUR";"-472,31";"CZK";"24,99";"CAFE AM RING WIEN";"";"Café am Ring";"Wien"
+"512345XXXXXX0042";"Petra Vzorová";"8. 9. 2026";"8. 9. 2026";"Platba kartou";"";"";"-1 250";"CZK";"";"KNIHKUPECTVI NA ROHU";"dárek";"Knihkupectví Na Rohu";"Brno"
+"512345XXXXXX0042";"Petra Vzorová";"12. 9. 2026";"12. 9. 2026";"Splátka";"";"";"2 334,71";"CZK";"";"SPLATKA KARTY";"";"";""

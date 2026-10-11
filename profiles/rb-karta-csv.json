@@ -1,0 +1,117 @@
+{
+  "id": "rb-karta-csv",
+  "bank": "Raiffeisenbank",
+  "label": "Raiffeisenbank — kreditní karta (CSV)",
+  "version": 1,
+  "format": "delimited",
+  "catalogue": {
+    "country": "CZ",
+    "keywords": [
+      "raiffeisenbank",
+      "raiffeisen",
+      "rb",
+      "kreditní karta",
+      "karta",
+      "pohyby",
+      "csv"
+    ],
+    "howTo": "V internetovém bankovnictví Raiffeisenbank otevři kreditní kartu, zobraz pohyby a exportuj je do CSV. Bere se zaúčtovaná částka v měně karty; u platby v cizí měně zůstane u pohybu i původní částka. Kartu přiřadíš k účtu tak, že mu dáš jako číslo účtu číslo karty, jak ho banka tiskne (531533XXXXXX1234)."
+  },
+  "detect": {
+    "contentContains": [
+      "Číslo kreditní karty",
+      "Datum transakce",
+      "Zaúčtovaná částka",
+      "Název Obchodníka"
+    ]
+  },
+  "delimited": {
+    "encoding": "auto",
+    "delimiter": ";",
+    "quote": "\"",
+    "headerMustContain": [
+      "číslo kreditní karty",
+      "datum transakce",
+      "zaúčtovaná částka",
+      "měna zaúčtování"
+    ]
+  },
+  "row": {
+    "date": {
+      "from": "Datum transakce",
+      "date": "d.M.yyyy",
+      "transforms": [
+        {
+          "op": "replace",
+          "pattern": "\\s",
+          "with": ""
+        }
+      ]
+    },
+    "bookingDate": {
+      "from": "Datum zúčtování",
+      "date": "d.M.yyyy",
+      "transforms": [
+        {
+          "op": "replace",
+          "pattern": "\\s",
+          "with": ""
+        }
+      ]
+    },
+    "amount": {
+      "from": "Zaúčtovaná částka",
+      "number": {
+        "decimal": ",",
+        "grouping": " "
+      }
+    },
+    "currency": {
+      "from": "Měna zaúčtování",
+      "default": "CZK"
+    },
+    "originalAmount": {
+      "from": "Původní částka",
+      "number": {
+        "decimal": ",",
+        "grouping": " "
+      }
+    },
+    "originalCurrency": {
+      "from": "Původní měna"
+    },
+    "counterpartyName": {
+      "from": "Název Obchodníka",
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ],
+      "fallback": {
+        "from": "Popis/Místo transakce",
+        "transforms": [
+          {
+            "op": "collapseSpaces"
+          }
+        ]
+      }
+    },
+    "message": {
+      "from": "Popis/Místo transakce",
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ]
+    },
+    "note": {
+      "from": "Vlastní poznámka"
+    },
+    "operation": {
+      "from": "Typ transakce"
+    },
+    "accountNumber": {
+      "from": "Číslo kreditní karty"
+    }
+  }
+}

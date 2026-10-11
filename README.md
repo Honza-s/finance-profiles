@@ -47,6 +47,7 @@ profil rozhoduje o tom, jak se čtou částky, takže se nespoléhá jen na to,
 | ČSOB | avízo e-mailem | `csob-avizo` |
 | DKB | CSV (Umsatzliste) | `dkb-csv` |
 | Partners Banka | CSV | `partners-csv` |
+| Raiffeisenbank | kreditní karta, CSV | `rb-karta-csv` |
 
 U Spořitelny ber radši **JSON než CSV**: má navíc IBAN protistrany i kategorii
 od banky a částka v něm nemá desetinnou čárku, takže se nedá přečíst o řád vedle.

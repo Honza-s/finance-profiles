@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "updated": "2026-10-10",
-  "count": 14,
+  "updated": "2026-10-11",
+  "count": 15,
   "profiles": [
     {
       "id": "csas-avizo",
@@ -227,6 +227,28 @@
       "file": "partners-csv.json",
       "bytes": 3047,
       "sha256": "f13dcaa7d5d95c25beebf2d30d59584cb7ed7b4e86c4816b2b83681b84620ab8"
+    },
+    {
+      "id": "rb-karta-csv",
+      "bank": "Raiffeisenbank",
+      "label": "Raiffeisenbank — kreditní karta (CSV)",
+      "country": "CZ",
+      "format": "delimited",
+      "kind": "statement",
+      "version": 1,
+      "keywords": [
+        "raiffeisenbank",
+        "raiffeisen",
+        "rb",
+        "kreditní karta",
+        "karta",
+        "pohyby",
+        "csv"
+      ],
+      "howTo": "V internetovém bankovnictví Raiffeisenbank otevři kreditní kartu, zobraz pohyby a exportuj je do CSV. Bere se zaúčtovaná částka v měně karty; u platby v cizí měně zůstane u pohybu i původní částka. Kartu přiřadíš k účtu tak, že mu dáš jako číslo účtu číslo karty, jak ho banka tiskne (531533XXXXXX1234).",
+      "file": "rb-karta-csv.json",
+      "bytes": 2614,
+      "sha256": "cfe77a84d19c0202d965f0061478b7eb55a7baa0f9f469f8e0c3f75bede65ff5"
     },
     {
       "id": "revolut-csv",
