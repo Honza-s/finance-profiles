@@ -48,6 +48,8 @@ profil rozhoduje o tom, jak se čtou částky, takže se nespoléhá jen na to,
 | DKB | CSV (Umsatzliste) | `dkb-csv` |
 | Partners Banka | CSV | `partners-csv` |
 | Raiffeisenbank | kreditní karta, CSV | `rb-karta-csv` |
+| Revolut | CSV, anglicky | `revolut-csv` |
+| Revolut | CSV, česky | `revolut-csv-cs` |
 
 U Spořitelny ber radši **JSON než CSV**: má navíc IBAN protistrany i kategorii
 od banky a částka v něm nemá desetinnou čárku, takže se nedá přečíst o řád vedle.

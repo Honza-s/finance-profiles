@@ -1,0 +1,7 @@
+Typ,Produkt,Datum zahájení,Datum dokončení,Popis,Částka,Poplatek,Měna,State,Zůstatek
+Dobíjení,Aktuální,2026-09-01 08:12:01,2026-09-01 08:12:09,Dobití z karty *1234,1500.00,0.00,CZK,DOKONČENO,1500.40
+Směna,Aktuální,2026-09-01 08:13:30,2026-09-01 08:13:30,Směněno na EUR,-1500.00,0.00,CZK,DOKONČENO,0.40
+Platba kartou,Aktuální,2026-09-03 12:30:11,2026-09-04 09:01:44,Kavárna U Mostu,-87.50,0.00,CZK,DOKONČENO,-87.10
+Převod,Aktuální,2026-09-05 18:00:00,2026-09-05 18:00:02,Od Petra Vzorová,250.00,0.00,CZK,DOKONČENO,162.90
+Platba kartou,Aktuální,2026-09-06 10:00:00,,Obchod čeká,-10.00,0.00,CZK,ČEKÁ NA VYŘÍZENÍ,
+Platba kartou,Aktuální,2026-09-07 10:00:00,2026-09-08 10:00:00,Vrácená platba,-42.00,0.00,CZK,VRÁCENO,

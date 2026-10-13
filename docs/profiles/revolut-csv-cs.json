@@ -1,0 +1,122 @@
+{
+  "id": "revolut-csv-cs",
+  "bank": "Revolut",
+  "label": "Revolut — výpis česky (CSV)",
+  "version": 1,
+  "format": "delimited",
+  "catalogue": {
+    "country": "LT",
+    "keywords": [
+      "revolut",
+      "výpis",
+      "česky",
+      "csv",
+      "směna"
+    ],
+    "howTo": "V aplikaci Revolut s češtinou: účet v dané měně › Výpis › Excel/CSV. Sloupce jsou česky (Typ, Datum zahájení, Částka…). Každá měna se exportuje zvlášť. Načtou se jen dokončené pohyby, poplatky se k částce nepřičítají. Směna měny se zapíše jako převod na účet Revolutu v druhé měně."
+  },
+  "detect": {
+    "contentContains": [
+      "Datum zahájení",
+      "Datum dokončení"
+    ],
+    "contentPattern": "Typ,Produkt,Datum zahájení,Datum dokončení"
+  },
+  "delimited": {
+    "encoding": "auto",
+    "delimiter": ",",
+    "quote": "\"",
+    "headerMustContain": [
+      "typ",
+      "datum zahájení",
+      "částka",
+      "měna",
+      "state"
+    ]
+  },
+  "rowFilters": [
+    {
+      "field": "State",
+      "keep": [
+        "DOKONČENO",
+        "COMPLETED"
+      ]
+    }
+  ],
+  "row": {
+    "date": {
+      "from": "Datum zahájení",
+      "date": "yyyy-MM-dd",
+      "transforms": [
+        {
+          "op": "take",
+          "length": 10
+        }
+      ]
+    },
+    "bookingDate": {
+      "from": "Datum dokončení",
+      "date": "yyyy-MM-dd",
+      "transforms": [
+        {
+          "op": "take",
+          "length": 10
+        }
+      ]
+    },
+    "amount": {
+      "from": "Částka",
+      "number": {
+        "decimal": ".",
+        "grouping": ","
+      }
+    },
+    "balance": {
+      "from": "Zůstatek",
+      "number": {
+        "decimal": ".",
+        "grouping": ","
+      }
+    },
+    "currency": {
+      "from": "Měna",
+      "default": "CZK"
+    },
+    "counterpartyName": {
+      "from": "Popis",
+      "transforms": [
+        {
+          "op": "collapseSpaces"
+        }
+      ]
+    },
+    "operation": {
+      "from": "Typ",
+      "transforms": [
+        {
+          "op": "trim"
+        },
+        {
+          "op": "replace",
+          "pattern": "^Směna$",
+          "with": "EXCHANGE"
+        },
+        {
+          "op": "replace",
+          "pattern": "^Dobíjení$",
+          "with": "TOPUP"
+        },
+        {
+          "op": "replace",
+          "pattern": "^Platba kartou$",
+          "with": "CARD_PAYMENT"
+        },
+        {
+          "op": "replace",
+          "pattern": "^Převod$",
+          "with": "TRANSFER"
+        }
+      ]
+    }
+  }
+}

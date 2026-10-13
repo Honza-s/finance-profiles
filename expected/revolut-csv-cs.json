@@ -1,0 +1,57 @@
+{
+    "profile": "revolut-csv-cs",
+    "rows": [
+        {
+            "date": "2026-09-01",
+            "amount": 150000,
+            "currency": "CZK",
+            "counterparty": "Dobití z karty *1234",
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": null,
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": null,
+            "externalId": null
+        },
+        {
+            "date": "2026-09-01",
+            "amount": -150000,
+            "currency": "CZK",
+            "counterparty": "Směněno na EUR",
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": null,
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": null,
+            "externalId": null
+        },
+        {
+            "date": "2026-09-03",
+            "amount": -8750,
+            "currency": "CZK",
+            "counterparty": "Kavárna U Mostu",
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": null,
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": null,
+            "externalId": null
+        },
+        {
+            "date": "2026-09-05",
+            "amount": 25000,
+            "currency": "CZK",
+            "counterparty": "Od Petra Vzorová",
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": null,
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": null,
+            "externalId": null
+        }
+    ]
+}

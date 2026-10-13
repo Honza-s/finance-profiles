@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "updated": "2026-10-11",
-  "count": 15,
+  "updated": "2026-10-13",
+  "count": 16,
   "profiles": [
     {
       "id": "csas-avizo",
@@ -249,6 +249,26 @@
       "file": "rb-karta-csv.json",
       "bytes": 2614,
       "sha256": "cfe77a84d19c0202d965f0061478b7eb55a7baa0f9f469f8e0c3f75bede65ff5"
+    },
+    {
+      "id": "revolut-csv-cs",
+      "bank": "Revolut",
+      "label": "Revolut — výpis česky (CSV)",
+      "country": "LT",
+      "format": "delimited",
+      "kind": "statement",
+      "version": 1,
+      "keywords": [
+        "revolut",
+        "výpis",
+        "česky",
+        "csv",
+        "směna"
+      ],
+      "howTo": "V aplikaci Revolut s češtinou: účet v dané měně › Výpis › Excel/CSV. Sloupce jsou česky (Typ, Datum zahájení, Částka…). Každá měna se exportuje zvlášť. Načtou se jen dokončené pohyby, poplatky se k částce nepřičítají. Směna měny se zapíše jako převod na účet Revolutu v druhé měně.",
+      "file": "revolut-csv-cs.json",
+      "bytes": 2542,
+      "sha256": "f995dfc3c8ea30ed789cb8965cd4986ae2420d61754c48a721be45d7fe20bfbb"
     },
     {
       "id": "revolut-csv",
