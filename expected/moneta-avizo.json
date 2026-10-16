@@ -1,0 +1,18 @@
+{
+    "profile": "moneta-avizo",
+    "rows": [
+        {
+            "date": "2026-09-17",
+            "amount": 1234567,
+            "currency": "CZK",
+            "counterparty": "PETRA VZOROVÁ",
+            "counterpartyAccount": "1928374650/0800",
+            "variableSymbol": null,
+            "message": null,
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": "123***456",
+            "externalId": null
+        }
+    ]
+}

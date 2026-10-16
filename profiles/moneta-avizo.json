@@ -1,0 +1,159 @@
+{
+  "id": "moneta-avizo",
+  "bank": "MONETA Money Bank",
+  "label": "MONETA — upozornění e-mailem (Přišly / Odešly peníze)",
+  "version": 1,
+  "format": "single",
+  "kind": "notification",
+  "catalogue": {
+    "country": "CZ",
+    "keywords": [
+      "moneta",
+      "moneta money bank",
+      "infoservis",
+      "přišly peníze",
+      "odešly peníze",
+      "avízo",
+      "e-mail",
+      "notifikace"
+    ],
+    "howTo": "Upozornění „Přišly peníze“ / „Odešly peníze“, které MONETA posílá z infoservis@moneta.cz (nastavení Info Servis v Internet Bance). Načítají se ze schránky, ne ze souboru. Číslo účtu je v e-mailu maskované (např. 123***456) — přiřadí se k účtu, jehož číslo začíná a končí stejně. Pohyb je předběžný a výpis ho později nahradí."
+  },
+  "detect": {
+    "contentContains": [
+      "Info Servis",
+      "Disponibilní zůstatek",
+      "Účetní zůstatek"
+    ],
+    "contentPattern": "(Přišly|Odešly) peníze"
+  },
+  "documentFields": {
+    "smer": {
+      "pattern": "(Přišly|Odešly) peníze",
+      "group": 1
+    },
+    "ucet": {
+      "pattern": "(?m)^\\s*Účet:\\s*([0-9*-]+(?:/[0-9]{4})?)",
+      "group": 1
+    },
+    "datum": {
+      "pattern": "Datum:\\s*(\\d{1,2}\\.\\s?\\d{1,2}\\.\\s?\\d{4})",
+      "group": 1
+    },
+    "castka": {
+      "pattern": "Částka:\\s*([+\\u2212-]?[\\d\\u00A0 ]+,\\d{2})",
+      "group": 1
+    },
+    "mena": {
+      "pattern": "Částka:\\s*[+\\u2212-]?[\\d\\u00A0 ]+,\\d{2}\\s*(Kč|[A-Z]{3})",
+      "group": 1
+    },
+    "popis": {
+      "pattern": "Popis:\\s*(.+)",
+      "group": 1
+    },
+    "protiucet": {
+      "pattern": "(?m)^\\s*(?:Od|Komu|Na účet|Příjemce):\\s*([0-9-]+/[0-9]{4})",
+      "group": 1
+    },
+    "zustatek": {
+      "pattern": "Účetní zůstatek:\\s*([+\\u2212-]?[\\d\\u00A0 ]+,\\d{2})",
+      "group": 1
+    }
+  },
+  "row": {
+    "date": {
+      "from": "datum",
+      "date": "d.M.yyyy",
+      "transforms": [
+        {
+          "op": "replace",
+          "pattern": "\\s",
+          "with": ""
+        }
+      ]
+    },
+    "amount": {
+      "from": "castka",
+      "number": {
+        "decimal": ",",
+        "grouping": " "
+      },
+      "transforms": [
+        {
+          "op": "replace",
+          "pattern": "[+\\u2212-]",
+          "with": ""
+        }
+      ]
+    },
+    "direction": {
+      "field": {
+        "from": "smer"
+      },
+      "debitValues": [
+        "Odešly"
+      ],
+      "creditValues": [
+        "Přišly"
+      ]
+    },
+    "balance": {
+      "from": "zustatek",
+      "number": {
+        "decimal": ",",
+        "grouping": " "
+      },
+      "transforms": [
+        {
+          "op": "replace",
+          "pattern": "\\u2212",
+          "with": "-"
+        }
+      ]
+    },
+    "currency": {
+      "from": "mena",
+      "transforms": [
+        {
+          "op": "replace",
+          "pattern": "Kč",
+          "with": "CZK"
+        }
+      ],
+      "default": "CZK"
+    },
+    "accountNumber": {
+      "from": "ucet"
+    },
+    "counterpartyAccount": {
+      "from": "protiucet"
+    },
+    "counterpartyName": {
+      "from": "popis",
+      "transforms": [
+        {
+          "op": "regexExtract",
+          "pattern": "(?:DEBET|KREDIT)-INFO:\\s*(.+)$",
+          "group": 1
+        },
+        {
+          "op": "collapseSpaces"
+        }
+      ]
+    },
+    "operation": {
+      "from": "popis",
+      "transforms": [
+        {
+          "op": "regexExtract",
+          "pattern": "^([^,]+)",
+          "group": 1
+        },
+        {
+          "op": "collapseSpaces"
+        }
+      ]
+    }
+  }
+}

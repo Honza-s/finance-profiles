@@ -47,6 +47,7 @@ profil rozhoduje o tom, jak se čtou částky, takže se nespoléhá jen na to,
 | ČSOB | avízo e-mailem | `csob-avizo` |
 | DKB | CSV (Umsatzliste) | `dkb-csv` |
 | Partners Banka | CSV | `partners-csv` |
+| MONETA Money Bank | upozornění e-mailem (Přišly / Odešly peníze) | `moneta-avizo` |
 | Raiffeisenbank | kreditní karta, CSV | `rb-karta-csv` |
 | Revolut | CSV, anglicky | `revolut-csv` |
 | Revolut | CSV, česky | `revolut-csv-cs` |

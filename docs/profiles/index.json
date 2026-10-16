@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "updated": "2026-10-13",
-  "count": 16,
+  "updated": "2026-10-16",
+  "count": 17,
   "profiles": [
     {
       "id": "csas-avizo",
@@ -187,6 +187,29 @@
       "file": "dkb-csv.json",
       "bytes": 2408,
       "sha256": "1c0d2f5ef54815fddb3f83c61877428b2054ad0dd5b46752c6757e45814585a4"
+    },
+    {
+      "id": "moneta-avizo",
+      "bank": "MONETA Money Bank",
+      "label": "MONETA — upozornění e-mailem (Přišly / Odešly peníze)",
+      "country": "CZ",
+      "format": "single",
+      "kind": "notification",
+      "version": 1,
+      "keywords": [
+        "moneta",
+        "moneta money bank",
+        "infoservis",
+        "přišly peníze",
+        "odešly peníze",
+        "avízo",
+        "e-mail",
+        "notifikace"
+      ],
+      "howTo": "Upozornění „Přišly peníze“ / „Odešly peníze“, které MONETA posílá z infoservis@moneta.cz (nastavení Info Servis v Internet Bance). Načítají se ze schránky, ne ze souboru. Číslo účtu je v e-mailu maskované (např. 123***456) — přiřadí se k účtu, jehož číslo začíná a končí stejně. Pohyb je předběžný a výpis ho později nahradí.",
+      "file": "moneta-avizo.json",
+      "bytes": 3606,
+      "sha256": "12eb3a6e7316f8bfa82197a7f12743ad5b32901551ca3bd1e7cc6327f143160f"
     },
     {
       "id": "oznameni-banky",
