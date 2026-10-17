@@ -72,7 +72,7 @@
 
 <header>
   <h1>Zásady ochrany soukromí</h1>
-  <p class="updated">Aplikace <strong>Finance</strong> (<code>com.honza.finance</code>) · platné od 30. 9. 2026</p>
+  <p class="updated">Aplikace <strong>Finance</strong> (<code>com.honza.finance</code>) · platné od 17. 10. 2026</p>
 </header>
 
 <p class="lede">Aplikace si vaše finanční údaje nechává v telefonu. Neexistuje žádný server,
@@ -113,10 +113,36 @@ aplikace ve vašem telefonu</strong>:</p>
   </thead>
   <tbody>
     <tr>
-      <td data-label="Komu"><strong>Yahoo Finance</strong><br><code>query1.finance.yahoo.com</code></td>
-      <td data-label="Kdy">Když máte v aplikaci investice — kvůli cenám a měnovým kurzům.</td>
-      <td data-label="Co se odesílá">Značka instrumentu (například <code>CEZ</code>) a měnový pár.
-      <strong>Neodesílá se, kolik kusů vlastníte, ani hodnota portfolia.</strong></td>
+      <td data-label="Komu"><strong>Yahoo Finance</strong><br><code>finance.yahoo.com</code></td>
+      <td data-label="Kdy">Když máte v aplikaci investice nebo používáte obrazovku Akcie — ceny, srovnávací indexy,
+      údaje o firmách (výsledky, dividendy, doporučení analytiků), hledání akcií podle názvu a zprávy o firmě.</td>
+      <td data-label="Co se odesílá">Značka akcie (například <code>CEZ.PR</code>), text, který hledáte, a technický
+      přístupový klíč, který Yahoo vydá. <strong>Neodesílá se, kolik kusů vlastníte, ani hodnota portfolia.</strong></td>
+    </tr>
+    <tr>
+      <td data-label="Komu"><strong>Morningstar</strong><br><code>morningstar.com</code></td>
+      <td data-label="Kdy">U fondů a papírů, které Yahoo nezná — kvůli ceně.</td>
+      <td data-label="Co se odesílá">ISIN nebo značka papíru.</td>
+    </tr>
+    <tr>
+      <td data-label="Komu"><strong>Česká národní banka</strong><br><code>cnb.cz</code></td>
+      <td data-label="Kdy">Při přepočtu cizích měn (investice, platby v cizí měně, daně).</td>
+      <td data-label="Co se odesílá">Nic o vás — stáhne se veřejný kurzovní lístek.</td>
+    </tr>
+    <tr>
+      <td data-label="Komu"><strong>Patria Finance</strong><br><code>patria.cz</code></td>
+      <td data-label="Kdy">Na obrazovce Akcie u českých akcií — doporučení analytiků.</td>
+      <td data-label="Co se odesílá">Nic o vás — stáhne se veřejná stránka s doporučeními (nejvýš jednou denně).</td>
+    </tr>
+    <tr>
+      <td data-label="Komu"><strong>Google News</strong><br><code>news.google.com</code></td>
+      <td data-label="Kdy">Jen když v detailu akcie otevřete „Co se o firmě píše".</td>
+      <td data-label="Co se odesílá">Název firmy jako hledaný výraz.</td>
+    </tr>
+    <tr>
+      <td data-label="Komu"><strong>Loga firem</strong><br>web firmy, <code>financialmodelingprep.com</code>, <code>google.com</code></td>
+      <td data-label="Kdy">U papírů v portfoliu — kvůli logu v seznamu (jednou, pak se drží v telefonu).</td>
+      <td data-label="Co se odesílá">Značka papíru nebo adresa webu firmy.</td>
     </tr>
     <tr>
       <td data-label="Komu"><strong>Disk Google</strong><br><code>googleapis.com</code></td>
@@ -172,6 +198,11 @@ synchronizuje nějaká jiná aplikace, děje se to mimo Finance a řídí se to 
         <td data-label="Proč">Zjištění, jestli je připojení, aby se stahování nespouštělo nadarmo.</td></tr>
     <tr><td data-label="Oprávnění"><code>POST_NOTIFICATIONS</code></td>
         <td data-label="Proč">Upozornění, že se něco stáhlo nebo že čeká pohyb na zatřídění.</td></tr>
+    <tr><td data-label="Oprávnění"><code>USE_BIOMETRIC</code></td>
+        <td data-label="Proč">Volitelný zámek aplikace otiskem prstu, obličejem nebo zámkem telefonu. Biometrické údaje aplikace nevidí — ověření dělá systém.</td></tr>
+    <tr><td data-label="Oprávnění">Přístup k oznámením<br><code>BIND_NOTIFICATION_LISTENER_SERVICE</code></td>
+        <td data-label="Proč">Jen pokud ho v Nastavení sami zapnete pro konkrétní bankovní aplikaci: z jejího oznámení o platbě
+        se zapíše pohyb. Oznámení ostatních aplikací se ignorují, nic se neukládá ani neodesílá.</td></tr>
   </tbody>
 </table>
 <p>Přístup k souborům aplikace nemá jako trvalé oprávnění: soubor výpisu i složku pro zálohu
@@ -179,7 +210,7 @@ vybíráte vy v systémovém dialogu a aplikace dostane přístup jen k tomu, co
 
 <h2>Zálohy</h2>
 <p>Záloha je jeden soubor zašifrovaný <strong>AES-256-GCM</strong> klíčem odvozeným z vašeho
-hesla funkcí PBKDF2 se 210 000 iteracemi. Heslo <strong>telefon neopustí</strong> — neodesílá se
+hesla funkcí PBKDF2 se 600 000 iteracemi. Heslo <strong>telefon neopustí</strong> — neodesílá se
 nikam a není uložené v žádné záloze.</p>
 <div class="card">
   <p><strong>Pozor:</strong> bez toho hesla zálohu nerozšifruje nikdo, včetně vývojáře.
@@ -201,7 +232,7 @@ v poznámkách k verzi aplikace.</p>
 
 <section class="lang" lang="en">
   <h1>Privacy policy</h1>
-  <p class="updated"><strong>Finance</strong> app (<code>com.honza.finance</code>) · effective 30 September 2026</p>
+  <p class="updated"><strong>Finance</strong> app (<code>com.honza.finance</code>) · effective 17 October 2026</p>
 
   <p class="lede">The app keeps your financial data on your phone. There is no server holding your
   transactions and no user account they are collected under.</p>
@@ -234,9 +265,35 @@ v poznámkách k verzi aplikace.</p>
     <tbody>
       <tr>
         <td data-label="Who"><strong>Yahoo Finance</strong></td>
-        <td data-label="When">When you hold investments — for prices and exchange rates.</td>
-        <td data-label="What is sent">The instrument ticker and the currency pair.
-        <strong>How many units you own and your portfolio value are never sent.</strong></td>
+        <td data-label="When">When you hold investments or use the Stocks screen — prices, benchmark indices,
+        company data (results, dividends, analyst ratings), stock search by name and company news.</td>
+        <td data-label="What is sent">The ticker (for example <code>CEZ.PR</code>), the text you search for and a technical
+        access token issued by Yahoo. <strong>How many units you own and your portfolio value are never sent.</strong></td>
+      </tr>
+      <tr>
+        <td data-label="Who"><strong>Morningstar</strong></td>
+        <td data-label="When">For funds and securities Yahoo does not know — for the price.</td>
+        <td data-label="What is sent">The ISIN or ticker.</td>
+      </tr>
+      <tr>
+        <td data-label="Who"><strong>Czech National Bank</strong> (<code>cnb.cz</code>)</td>
+        <td data-label="When">When converting foreign currencies (investments, foreign payments, taxes).</td>
+        <td data-label="What is sent">Nothing about you — the public exchange rate list is downloaded.</td>
+      </tr>
+      <tr>
+        <td data-label="Who"><strong>Patria Finance</strong> (<code>patria.cz</code>)</td>
+        <td data-label="When">On the Stocks screen for Czech stocks — analyst recommendations.</td>
+        <td data-label="What is sent">Nothing about you — a public page is downloaded, at most once a day.</td>
+      </tr>
+      <tr>
+        <td data-label="Who"><strong>Google News</strong></td>
+        <td data-label="When">Only when you open "What's being written about the company" in a stock's detail.</td>
+        <td data-label="What is sent">The company name as the search term.</td>
+      </tr>
+      <tr>
+        <td data-label="Who"><strong>Company logos</strong> (company website, <code>financialmodelingprep.com</code>, <code>google.com</code>)</td>
+        <td data-label="When">For securities in your portfolio — once, then kept on the phone.</td>
+        <td data-label="What is sent">The ticker or the company's website address.</td>
       </tr>
       <tr>
         <td data-label="Who"><strong>Google Drive</strong></td>
@@ -281,12 +338,15 @@ v poznámkách k verzi aplikace.</p>
   <h2>Permissions</h2>
   <p><code>INTERNET</code> for prices, optional cloud backup and optional mailbox reading;
   <code>ACCESS_NETWORK_STATE</code> to avoid pointless downloads; <code>POST_NOTIFICATIONS</code> to tell
-  you something was downloaded or is waiting to be classified. File access is not a standing permission:
+  you something was downloaded or is waiting to be classified; <code>USE_BIOMETRIC</code> for the optional
+  app lock (the system does the check, the app never sees biometric data). <strong>Notification access</strong>
+  is used only if you turn it on in Settings for a specific banking app: a payment notification from that app
+  becomes a transaction. Notifications from other apps are ignored; nothing is stored or sent. File access is not a standing permission:
   you pick each statement file and backup folder in the system dialog.</p>
 
   <h2>Backups</h2>
   <p>A backup is a single file encrypted with <strong>AES-256-GCM</strong> using a key derived from your
-  passphrase with PBKDF2 at 210,000 iterations. The passphrase <strong>never leaves the device</strong>.
+  passphrase with PBKDF2 at 600,000 iterations. The passphrase <strong>never leaves the device</strong>.
   Without it nobody can decrypt the backup, including the developer. That is by design: a forgotten
   passphrase means a lost backup.</p>
 
