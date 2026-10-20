@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "updated": "2026-10-16",
-  "count": 17,
+  "updated": "2026-10-20",
+  "count": 18,
   "profiles": [
     {
       "id": "csas-avizo",
@@ -272,6 +272,28 @@
       "file": "rb-karta-csv.json",
       "bytes": 2614,
       "sha256": "cfe77a84d19c0202d965f0061478b7eb55a7baa0f9f469f8e0c3f75bede65ff5"
+    },
+    {
+      "id": "rb-karta-pdf",
+      "bank": "Raiffeisenbank",
+      "label": "Raiffeisenbank — výpis z kreditní karty (PDF)",
+      "country": "CZ",
+      "format": "textRegex",
+      "kind": "statement",
+      "version": 1,
+      "keywords": [
+        "raiffeisenbank",
+        "raiffeisen",
+        "rb",
+        "kreditní karta",
+        "kartový účet",
+        "výpis",
+        "pdf"
+      ],
+      "howTo": "Měsíční výpis z kartového účtu kreditní karty Raiffeisenbank v PDF (přijde e-mailem nebo je v internetovém bankovnictví). Splátka karty („VAŠE PLATBA - DĚKUJEME“) se načte jako příchozí platba a spáruje se s odchozí platbou z běžného účtu. Kartu přiřadíš k účtu tak, že mu dáš jako číslo účtu číslo karty, jak ho banka tiskne (531533XXXXXX1234) — stejně jako u CSV z téže karty.",
+      "file": "rb-karta-pdf.json",
+      "bytes": 3685,
+      "sha256": "f45662a1f781075dd9a4984bdcb7cb0d8c127d88ab7ad890791124539f98800f"
     },
     {
       "id": "revolut-csv-cs",

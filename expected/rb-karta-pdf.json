@@ -1,0 +1,96 @@
+{
+    "profile": "rb-karta-pdf",
+    "rows": [
+        {
+            "date": "2026-09-18",
+            "amount": 987650,
+            "currency": "CZK",
+            "counterparty": null,
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": null,
+            "note": null,
+            "bankCategory": "VAŠE PLATBA - DĚKUJEME",
+            "statementAccount": "512345XXXXXX0042",
+            "externalId": null
+        },
+        {
+            "date": "2026-09-21",
+            "amount": -123450,
+            "currency": "CZK",
+            "counterparty": "ZELENINA U TONDY S.R.O. Brno",
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": null,
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": "512345XXXXXX0042",
+            "externalId": null
+        },
+        {
+            "date": "2026-09-24",
+            "amount": -200000,
+            "currency": "CZK",
+            "counterparty": "POTRAVINY ONLINE Praha 5",
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": null,
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": "512345XXXXXX0042",
+            "externalId": null
+        },
+        {
+            "date": "2026-09-30",
+            "amount": -81530,
+            "currency": "CZK",
+            "counterparty": "Lekarna U Mostu Plzen",
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": null,
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": "512345XXXXXX0042",
+            "externalId": null
+        },
+        {
+            "date": "2026-10-03",
+            "amount": -9990,
+            "currency": "CZK",
+            "counterparty": "HUDBA STREAM Praha 1",
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": null,
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": "512345XXXXXX0042",
+            "externalId": null
+        },
+        {
+            "date": "2026-10-05",
+            "amount": 45000,
+            "currency": "CZK",
+            "counterparty": "OBCHOD ZBOZI S.R.O. Praha 4",
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": null,
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": "512345XXXXXX0042",
+            "externalId": null
+        },
+        {
+            "date": "2026-10-12",
+            "amount": -1234500,
+            "currency": "CZK",
+            "counterparty": "CESTOVNI KANCELAR TEST Ostrava",
+            "counterpartyAccount": null,
+            "variableSymbol": null,
+            "message": null,
+            "note": null,
+            "bankCategory": null,
+            "statementAccount": "512345XXXXXX0042",
+            "externalId": null
+        }
+    ]
+}
