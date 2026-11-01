@@ -50,6 +50,7 @@ profil rozhoduje o tom, jak se čtou částky, takže se nespoléhá jen na to,
 | MONETA Money Bank | upozornění e-mailem (Přišly / Odešly peníze) | `moneta-avizo` |
 | Raiffeisenbank | kreditní karta, CSV | `rb-karta-csv` |
 | Raiffeisenbank | kreditní karta, PDF výpis | `rb-karta-pdf` |
+| Raiffeisenbank | Pohyb na účtě (e-mail Informuj mě) | `rb-avizo` |
 | Revolut | CSV, anglicky | `revolut-csv` |
 | Revolut | CSV, česky | `revolut-csv-cs` |
 

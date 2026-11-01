@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "updated": "2026-10-20",
-  "count": 18,
+  "updated": "2026-11-01",
+  "count": 19,
   "profiles": [
     {
       "id": "csas-avizo",
@@ -250,6 +250,29 @@
       "file": "partners-csv.json",
       "bytes": 3047,
       "sha256": "f13dcaa7d5d95c25beebf2d30d59584cb7ed7b4e86c4816b2b83681b84620ab8"
+    },
+    {
+      "id": "rb-avizo",
+      "bank": "Raiffeisenbank",
+      "label": "Raiffeisenbank — Pohyb na účtě (e-mail Informuj mě)",
+      "country": "CZ",
+      "format": "single",
+      "kind": "notification",
+      "version": 1,
+      "keywords": [
+        "raiffeisenbank",
+        "raiffeisen",
+        "rb",
+        "informuj mě",
+        "pohyb na účtě",
+        "avízo",
+        "e-mail",
+        "notifikace"
+      ],
+      "howTo": "E-mail „Pohyb na účtě“ ze služby Informuj mě (info@rb.cz). Načítá se ze schránky, ne ze souboru — v nastavení schránky přidej odesílatele rb.cz. Pohyb je předběžný a výpis ho později nahradí. Svůj účet pozná podle čísla v e-mailu (u příchozí platby „Na účet“, u odchozí „Z účtu“).",
+      "file": "rb-avizo.json",
+      "bytes": 5427,
+      "sha256": "f961578cb87afc82bfef169ecafc1eb06bbfbb34e29d3d79b745e9917966d71a"
     },
     {
       "id": "rb-karta-csv",
