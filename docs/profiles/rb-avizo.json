@@ -2,7 +2,7 @@
   "id": "rb-avizo",
   "bank": "Raiffeisenbank",
   "label": "Raiffeisenbank — Pohyb na účtě (e-mail Informuj mě)",
-  "version": 1,
+  "version": 2,
   "format": "single",
   "kind": "notification",
   "catalogue": {
@@ -61,11 +61,11 @@
       "group": 1
     },
     "castka": {
-      "pattern": "Částka v měně účtu\\s+([+\\u2212-]?[\\d\\u00A0 ]+,\\d{2})",
+      "pattern": "Částka v měně účtu\\s+([+\\u2212-]?[\\d\\u00A0 .]+,\\d{2})",
       "group": 1
     },
     "mena": {
-      "pattern": "Částka v měně účtu\\s+[+\\u2212-]?[\\d\\u00A0 ]+,\\d{2}\\s*(Kč|[A-Z]{3})",
+      "pattern": "Částka v měně účtu\\s+[+\\u2212-]?[\\d\\u00A0 .]+,\\d{2}\\s*(Kč|[A-Z]{3})",
       "group": 1,
       "default": "CZK"
     },
@@ -120,6 +120,11 @@
         {
           "op": "replace",
           "pattern": "[+\\u2212-]",
+          "with": ""
+        },
+        {
+          "op": "replace",
+          "pattern": "[.\\u00A0]",
           "with": ""
         }
       ]

@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-11-01",
+  "updated": "2026-11-07",
   "count": 19,
   "profiles": [
     {
@@ -258,7 +258,7 @@
       "country": "CZ",
       "format": "single",
       "kind": "notification",
-      "version": 1,
+      "version": 2,
       "keywords": [
         "raiffeisenbank",
         "raiffeisen",
@@ -271,8 +271,8 @@
       ],
       "howTo": "E-mail „Pohyb na účtě“ ze služby Informuj mě (info@rb.cz). Načítá se ze schránky, ne ze souboru — v nastavení schránky přidej odesílatele rb.cz. Pohyb je předběžný a výpis ho později nahradí. Svůj účet pozná podle čísla v e-mailu (u příchozí platby „Na účet“, u odchozí „Z účtu“).",
       "file": "rb-avizo.json",
-      "bytes": 5427,
-      "sha256": "f961578cb87afc82bfef169ecafc1eb06bbfbb34e29d3d79b745e9917966d71a"
+      "bytes": 5533,
+      "sha256": "2c03a3afe1a30dc194c6b22bb1218a8ed80e688e92b9964aed53dbf441de9660"
     },
     {
       "id": "rb-karta-csv",
